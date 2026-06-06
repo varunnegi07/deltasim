@@ -2,14 +2,17 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-navy">
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan rounded-full blur-[128px]" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500 rounded-full blur-[128px]" />
-      </div>
+      <VideoPlayer
+        src="/videos/hero-cae-simulation.mp4"
+        poster="/images/hero-poster.svg"
+        type="background"
+        overlay
+      />
       <div className="container-main relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
@@ -17,7 +20,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
               <span className="text-cyan text-xs font-medium tracking-wider uppercase">
                 Engineering Excellence Since 2014
@@ -55,7 +58,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/talent"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-all backdrop-blur-sm"
               >
                 Hire Engineering Talent
                 <svg
@@ -82,8 +85,8 @@ export default function Hero() {
             className="hidden lg:block relative"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-blue-500/20 rounded-3xl" />
-              <div className="absolute inset-4 bg-navy-light rounded-2xl border border-white/10 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-blue-500/20 rounded-3xl backdrop-blur-sm" />
+              <div className="absolute inset-4 bg-navy-light/80 rounded-2xl border border-white/10 overflow-hidden backdrop-blur-sm">
                 <div className="p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />

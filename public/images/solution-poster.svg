@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1F3B"/>
+      <stop offset="100%" style="stop-color:#132d5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g transform="translate(640,360)" opacity="0.12">
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#38BDF8" stroke-width="1"/>
+    <circle cx="0" cy="0" r="40" fill="#38BDF8" opacity="0.3"/>
+    <line x1="-160" y1="0" x2="160" y2="0" stroke="#38BDF8" stroke-width="0.5" opacity="0.3"/>
+    <line x1="0" y1="-160" x2="0" y2="160" stroke="#38BDF8" stroke-width="0.5" opacity="0.3"/>
+  </g>
+  <text x="50%" y="90%" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="12" opacity="0.3">Engineering Simulation Preview</text>
+</svg>

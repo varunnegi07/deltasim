@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111827"/>
+      <stop offset="100%" style="stop-color:#1F2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g transform="translate(640,320)" opacity="0.1">
+    <path d="M-40-30 L40-30 L55 10 L0 50 L-55 10 Z" fill="none" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="0" cy="-10" r="15" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+    <rect x="-80" y="60" width="160" height="3" rx="1.5" fill="#38BDF8" opacity="0.5"/>
+    <rect x="-60" y="72" width="120" height="3" rx="1.5" fill="#38BDF8" opacity="0.3"/>
+  </g>
+  <text x="50%" y="92%" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="12" opacity="0.3">Client Testimonial</text>
+</svg>

@@ -13,6 +13,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const solutions = [
   {
@@ -155,25 +156,11 @@ function SolutionsList() {
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="aspect-[4/3] rounded-2xl bg-grey-50 border border-grey-200 p-8">
-                  <div className="space-y-3">
-                    {[...Array(4)].map((_, j) => (
-                      <div key={j} className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-grey-100">
-                        <div className="w-2 h-2 rounded-full bg-cyan" />
-                        <div className="h-3 flex-1 rounded bg-grey-100" />
-                      </div>
-                    ))}
-                    <div className="mt-4 p-4 rounded-lg bg-cyan/5 border border-cyan/10">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-cyan text-xs font-mono">Simulation Complete</span>
-                        <span className="text-cyan text-xs font-mono">✓</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-grey-200 overflow-hidden">
-                        <div className="h-full w-full bg-gradient-to-r from-cyan to-blue-400 rounded-full" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <VideoPlayer
+                  src={`/videos/${sol.id}.mp4`}
+                  poster="/images/solution-poster.svg"
+                  type="card"
+                />
               </div>
             </motion.div>
           );

@@ -5,6 +5,7 @@ import CoreServices from "@/components/home/CoreServices";
 import IndustriesPreview from "@/components/home/IndustriesPreview";
 import WhyDeltaSim from "@/components/home/WhyDeltaSim";
 import ProcessFlow from "@/components/home/ProcessFlow";
+import ClientTestimonials from "@/components/home/ClientTestimonials";
 import ToolsTech from "@/components/home/ToolsTech";
 import FinalCTA from "@/components/home/FinalCTA";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <IndustriesPreview />
       <WhyDeltaSim />
       <ProcessFlow />
+      <ClientTestimonials />
       <ToolsTech />
       <FinalCTA />
     </>
