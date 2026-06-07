@@ -46,7 +46,7 @@ export default function ProcessFlow() {
         <div className="relative">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-grey-200 -translate-y-1/2" />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-4">
             {steps.map((step, i) => {
               const Icon = step.icon;
               return (
@@ -57,9 +57,9 @@ export default function ProcessFlow() {
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="relative flex flex-col items-center text-center"
                 >
-                  <div className="relative z-10 w-14 h-14 rounded-full bg-grey-50 border-2 border-grey-200 flex items-center justify-center mb-4 group-hover:border-cyan transition-colors">
+                  <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-grey-50 border-2 border-grey-200 flex items-center justify-center mb-3 md:mb-4 group-hover:border-cyan transition-colors">
                     <Icon className="w-6 h-6 text-cyan" />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-cyan text-white text-xs font-bold flex items-center justify-center">
+                    <div className="absolute -top-1.5 -right-1.5 w-5 h-5 md:w-6 md:h-6 rounded-full bg-cyan text-white text-[10px] md:text-xs font-bold flex items-center justify-center">
                       {i + 1}
                     </div>
                   </div>

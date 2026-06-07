@@ -26,18 +26,18 @@ export default function ContactPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[45vh] flex items-center gradient-navy pt-24">
+    <section className="min-h-[40vh] md:min-h-[45vh] flex items-center gradient-navy pt-20 md:pt-24">
       <div className="container-main">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan" />
             <span className="text-cyan text-xs font-medium tracking-wider uppercase">Contact</span>
           </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
             Let&apos;s Discuss Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Engineering Needs</span>
           </h1>
-          <p className="text-grey-300 text-lg md:text-xl max-w-3xl leading-relaxed">
+          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
             Whether you need simulation services, engineering talent, or both —
             our team is ready to help.
           </p>
@@ -57,7 +57,7 @@ function ContactFormSection({
   return (
     <section className="section-padding bg-white">
       <div className="container-main">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -99,7 +99,7 @@ function ContactFormSection({
             className="lg:col-span-3"
           >
             <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Name</label>
                   <input type="text" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Your name" />
@@ -109,7 +109,7 @@ function ContactFormSection({
                   <input type="text" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Company name" />
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Email</label>
                   <input type="email" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="email@company.com" />

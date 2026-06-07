@@ -20,7 +20,7 @@ export default function FinalCTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6 max-w-3xl mx-auto">
+          <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6 max-w-3xl mx-auto">
             Let&apos;s Build High-Performance Engineering Solutions
           </h2>
           <p className="text-grey-300 text-lg max-w-2xl mx-auto mb-10">

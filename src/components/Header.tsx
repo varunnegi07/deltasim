@@ -59,7 +59,7 @@ export default function Header() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-white"
+          className="lg:hidden p-2 text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,9 +69,10 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
             className="lg:hidden bg-navy border-t border-white/10"
           >
             <div className="container-main py-4 flex flex-col gap-1">
@@ -80,7 +81,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors min-h-[44px] flex items-center ${
                     pathname === link.href
                       ? "text-cyan bg-white/10"
                       : "text-grey-300 hover:text-white hover:bg-white/5"
@@ -92,7 +93,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-5 py-3 bg-cyan text-navy font-semibold text-sm rounded-lg text-center hover:bg-cyan-dark transition-colors"
+                className="mt-2 px-5 py-3 bg-cyan text-navy font-semibold text-sm rounded-lg text-center hover:bg-cyan-dark transition-colors min-h-[44px] flex items-center justify-center"
               >
                 Request Consultation
               </Link>

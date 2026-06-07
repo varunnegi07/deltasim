@@ -89,7 +89,7 @@ export default function WhyDeltaSim() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="p-5 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <div className="flex items-center gap-4 mb-6">
                 <CheckCircle className="w-8 h-8 text-cyan" />
                 <div>

@@ -13,8 +13,8 @@ export default function Hero() {
         type="background"
         overlay
       />
-      <div className="container-main relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-main relative z-10 pt-20 pb-12 md:pt-32 md:pb-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function Hero() {
                 Engineering Excellence Since 2014
               </span>
             </div>
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-6">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-6">
               Advanced Engineering Simulation{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">
                 & Talent Solutions

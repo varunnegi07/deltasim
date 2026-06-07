@@ -27,7 +27,7 @@ export default function MetricsStrip() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-cyan mb-1">
+              <div className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cyan mb-1">
                 {metric.value}
               </div>
               <div className="text-grey-400 text-sm">{metric.label}</div>

@@ -42,17 +42,17 @@ export default function AboutPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[50vh] flex items-center gradient-navy pt-24">
+    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
       <div className="container-main">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan" />
             <span className="text-cyan text-xs font-medium tracking-wider uppercase">About Us</span>
           </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
             Engineering Excellence, Delivered
           </h1>
-          <p className="text-grey-300 text-lg md:text-xl max-w-3xl leading-relaxed">
+          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
             DeltaSim is a premium engineering simulation and talent solutions
             company delivering high-performance engineering outcomes across
             global industries.
