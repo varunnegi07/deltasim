@@ -83,11 +83,22 @@ export default function VideoPlayer({
   }, [type, mobile, isInView]);
 
   if (type === "background") {
+    if (mobile) {
+      return (
+        <div
+          className={`absolute inset-0 bg-cover bg-center ${className}`}
+          style={{ backgroundImage: `url(${poster})` }}
+        >
+          {overlay && <div className="absolute inset-0 bg-navy/60" />}
+        </div>
+      );
+    }
+
     return (
       <div ref={containerRef} className={`absolute inset-0 overflow-hidden ${className}`}>
         <video
           ref={videoRef}
-          autoPlay={!mobile}
+          autoPlay
           muted
           loop
           playsInline
@@ -99,11 +110,6 @@ export default function VideoPlayer({
           <source src={src} type="video/mp4" />
         </video>
         {overlay && <div className="absolute inset-0 bg-navy/60" />}
-        {!isLoaded && !hasError && (
-          <div className="absolute inset-0 flex items-center justify-center bg-navy">
-            <Loader2 className="w-8 h-8 text-cyan animate-spin" />
-          </div>
-        )}
       </div>
     );
   }
