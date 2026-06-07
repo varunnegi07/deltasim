@@ -31,7 +31,6 @@ export default function VideoPlayer({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showControls, setShowControls] = useState(false);
-  const [mobileTapped, setMobileTapped] = useState(false);
   const mobile = isMobile();
 
   const togglePlay = useCallback(() => {
@@ -50,15 +49,6 @@ export default function VideoPlayer({
     if (!videoRef.current) return;
     videoRef.current.muted = !videoRef.current.muted;
     setIsMuted(videoRef.current.muted);
-  }, []);
-
-  const handleMobilePlay = useCallback(() => {
-    setMobileTapped(true);
-    const v = videoRef.current;
-    if (v) {
-      v.play();
-      setIsPlaying(true);
-    }
   }, []);
 
   useEffect(() => {
@@ -83,35 +73,16 @@ export default function VideoPlayer({
   }, [type, mobile]);
 
   useEffect(() => {
-    if (type === "background" && !mobile && isInView) {
+    if (type === "background" && isInView) {
       const v = videoRef.current;
       if (v) {
         v.play();
         setIsPlaying(true);
       }
     }
-  }, [type, mobile, isInView]);
+  }, [type, isInView]);
 
   if (type === "background") {
-    if (mobile && !mobileTapped) {
-      return (
-        <div
-          className={`absolute inset-0 bg-cover bg-center cursor-pointer ${className}`}
-          style={{ backgroundImage: `url(${poster})` }}
-          onClick={handleMobilePlay}
-        >
-          {overlay && <div className="absolute inset-0 bg-navy/60" />}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan/90 text-navy flex items-center justify-center backdrop-blur-sm shadow-lg hover:bg-cyan transition-colors active:scale-95">
-              <Play className="w-7 h-7 md:w-8 md:h-8 ml-1" />
-            </div>
-          </div>
-          <p className="absolute bottom-8 left-0 right-0 text-center text-white/60 text-xs z-10">
-            Tap to play video
-          </p>
-        </div>
-      );
-    }
 
     return (
       <div ref={containerRef} className={`absolute inset-0 overflow-hidden ${className}`}>
@@ -121,6 +92,7 @@ export default function VideoPlayer({
           muted
           loop
           playsInline
+          preload="auto"
           poster={poster}
           onLoadedData={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
