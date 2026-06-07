@@ -20,36 +20,43 @@ const industries = [
     icon: Rocket,
     name: "Aerospace & Defence",
     problem: "Structural integrity, aeroelasticity, lightweight composites",
+    image: "/images/industry-aero.svg",
   },
   {
     icon: Car,
     name: "Automotive",
     problem: "Crash analysis, NVH, lightweighting, durability",
+    image: "/images/industry-auto.svg",
   },
   {
     icon: Zap,
     name: "Energy & Power",
     problem: "Heat transfer, turbine simulation, renewable systems",
+    image: "/images/industry-energy.svg",
   },
   {
     icon: Fuel,
     name: "Oil & Gas",
     problem: "Pressure systems, corrosion analysis, pipeline integrity",
+    image: "/images/industry-oil-gas.svg",
   },
   {
     icon: HeartPulse,
     name: "Medical Devices",
     problem: "Biomechanics, fatigue analysis, implant design",
+    image: "/images/industry-medical.svg",
   },
   {
     icon: Cog,
     name: "Industrial Equipment",
     problem: "Heavy machinery simulation, structural optimization",
+    image: "/images/industry-industrial.svg",
   },
   {
     icon: Smartphone,
     name: "Consumer Electronics",
     problem: "Durability, thermal management, drop test simulation",
+    image: "/images/industry-electronics.svg",
   },
 ];
 
@@ -85,6 +92,12 @@ export default function IndustriesPreview() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <div className="group p-6 rounded-xl bg-grey-50 border border-grey-200 hover-lift">
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="w-full h-24 object-contain mb-3 rounded-lg"
+                    loading="lazy"
+                  />
                   <Icon className="w-8 h-8 text-cyan mb-3" />
                   <h3 className="font-heading font-bold text-navy mb-2">
                     {industry.name}

@@ -12,6 +12,7 @@ const inquiryTypes = [
 
 export default function ContactPage() {
   const [inquiryType, setInquiryType] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -19,6 +20,8 @@ export default function ContactPage() {
       <ContactFormSection
         inquiryType={inquiryType}
         setInquiryType={setInquiryType}
+        submitted={submitted}
+        setSubmitted={setSubmitted}
       />
     </>
   );
@@ -50,10 +53,46 @@ function HeroSection() {
 function ContactFormSection({
   inquiryType,
   setInquiryType,
+  submitted,
+  setSubmitted,
 }: {
   inquiryType: string;
   setInquiryType: (v: string) => void;
+  submitted: boolean;
+  setSubmitted: (v: boolean) => void;
 }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Contact form submission:", { ...formData, inquiryType });
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section className="section-padding bg-white">
+        <div className="container-main max-w-lg mx-auto text-center py-20">
+          <div className="w-16 h-16 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-6">
+            <Send className="w-8 h-8 text-cyan" />
+          </div>
+          <h2 className="font-heading font-bold text-3xl text-navy mb-4">Thank You!</h2>
+          <p className="text-grey-500 text-lg">We&apos;ll review your inquiry and respond within 24 hours.</p>
+        </div>
+      </section>
+    );
+  }
+
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
   return (
     <section className="section-padding bg-white">
       <div className="container-main">
@@ -64,6 +103,12 @@ function ContactFormSection({
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
+            <img
+              src="/images/contact-map.svg"
+              alt="Our location"
+              className="w-full max-w-sm mb-6 rounded-xl"
+              loading="lazy"
+            />
             <h2 className="font-heading font-bold text-2xl text-navy mb-6">
               Get In Touch
             </h2>
@@ -75,7 +120,7 @@ function ContactFormSection({
             <div className="space-y-5">
               {[
                 { icon: Mail, label: "Email", value: "engineering@deltasim.com" },
-                { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+                { icon: Phone, label: "Phone", value: "+1 (888) 555-0199" },
                 { icon: MapPin, label: "Office", value: "Engineering Hub, Innovation District" },
               ].map((item) => {
                 const Icon = item.icon;
@@ -98,25 +143,25 @@ function ContactFormSection({
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Your name" />
+                  <input type="text" value={formData.name} onChange={(e) => updateField("name", e.target.value)} required className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Your name" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Company</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Company name" />
+                  <input type="text" value={formData.company} onChange={(e) => updateField("company", e.target.value)} className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="Company name" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Email</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="email@company.com" />
+                  <input type="email" value={formData.email} onChange={(e) => updateField("email", e.target.value)} required className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="email@company.com" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">Phone</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="+1 (555) 000-0000" />
+                  <input type="tel" value={formData.phone} onChange={(e) => updateField("phone", e.target.value)} className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="+1 (888) 000-0000" />
                 </div>
               </div>
               <div>
@@ -142,6 +187,9 @@ function ContactFormSection({
                 <label className="block text-sm font-medium text-navy mb-1.5">Message</label>
                 <textarea
                   rows={5}
+                  value={formData.message}
+                  onChange={(e) => updateField("message", e.target.value)}
+                  required
                   className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors resize-none"
                   placeholder="Describe your engineering requirements..."
                 />

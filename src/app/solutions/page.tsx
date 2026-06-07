@@ -102,6 +102,8 @@ function HeroSection() {
     <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
       <div className="container-main">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+            <div className="flex-1">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
             <span className="w-2 h-2 rounded-full bg-cyan" />
             <span className="text-cyan text-xs font-medium tracking-wider uppercase">Solution Offerings</span>
@@ -115,6 +117,16 @@ function HeroSection() {
             high-fidelity simulation and optimization — delivered with precision
             and technical rigor.
           </p>
+            </div>
+            <div className="flex-shrink-0 hidden md:block">
+              <img
+                src="/images/dual-engineering.svg"
+                alt="Engineering solutions"
+                className="w-48 h-32 object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

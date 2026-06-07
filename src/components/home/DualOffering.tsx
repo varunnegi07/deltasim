@@ -43,6 +43,7 @@ export default function DualOffering() {
               ],
               href: "/solutions",
               cta: "Explore Solutions",
+              image: "/images/dual-engineering.svg",
             },
             {
               icon: Users,
@@ -57,6 +58,7 @@ export default function DualOffering() {
               ],
               href: "/talent",
               cta: "Hire Talent",
+              image: "/images/dual-talent.svg",
             },
           ].map((offering, i) => {
             const Icon = offering.icon;
@@ -70,9 +72,15 @@ export default function DualOffering() {
                 <div className="group relative h-full p-6 md:p-8 lg:p-10 rounded-2xl bg-white border border-grey-200 hover-lift overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center mb-4">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
+                    <img
+                      src={offering.image}
+                      alt={offering.title}
+                      className="w-full h-32 md:h-40 object-contain mb-4 rounded-lg"
+                      loading="lazy"
+                    />
                     <h3 className="font-heading font-bold text-2xl text-navy mb-3">
                       {offering.title}
                     </h3>

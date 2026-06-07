@@ -26,7 +26,7 @@ const footerLinks = {
     { label: "About Us", href: "/about" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
   ],
 };
 
@@ -51,13 +51,20 @@ export default function Footer() {
               high-performance engineering outcomes across global industries.
             </p>
             <div className="flex gap-3">
-              {["LinkedIn", "Twitter", "YouTube"].map((social) => (
-                <span
-                  key={social}
-                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-grey-400 text-xs hover:bg-cyan hover:text-navy transition-colors cursor-pointer"
+              {[
+                { name: "LinkedIn", href: "https://linkedin.com/company/deltasim" },
+                { name: "Twitter", href: "https://twitter.com/deltasim" },
+                { name: "YouTube", href: "https://youtube.com/@deltasim" },
+              ].map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-grey-400 text-xs hover:bg-cyan hover:text-navy transition-colors"
                 >
-                  {social[0]}
-                </span>
+                  {social.name[0]}
+                </a>
               ))}
             </div>
           </div>

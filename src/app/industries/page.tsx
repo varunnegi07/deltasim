@@ -21,42 +21,49 @@ const industries = [
     name: "Aerospace & Defence",
     desc: "Structural integrity analysis, aeroelasticity simulations, composite material modeling, and fatigue life prediction for airframe and defense systems.",
     applications: ["Flight load simulation", "Engine component FEA", "Radome structural analysis", "Landing gear dynamics"],
+    image: "/images/industry-aero.svg",
   },
   {
     icon: Car,
     name: "Automotive & Mobility",
     desc: "Crashworthiness analysis, NVH optimization, lightweighting through topology optimization, and electric vehicle battery thermal management.",
     applications: ["Crash simulation (LS-DYNA)", "NVH analysis", "Thermal management", "Durability testing"],
+    image: "/images/industry-auto.svg",
   },
   {
     icon: Zap,
     name: "Energy & Power",
     desc: "Heat transfer analysis for turbines, renewable energy system simulation, nuclear component structural analysis, and power electronics cooling.",
     applications: ["Turbine blade CFD", "Solar thermal analysis", "Wind turbine FEA", "Battery thermal modeling"],
+    image: "/images/industry-energy.svg",
   },
   {
     icon: Fuel,
     name: "Oil & Gas",
     desc: "Pressure vessel analysis, pipeline integrity assessment, corrosion modeling, and offshore structure fatigue analysis.",
     applications: ["Pipeline FEA", "Pressure vessel design", "Corrosion modeling", "Offshore structural analysis"],
+    image: "/images/industry-oil-gas.svg",
   },
   {
     icon: HeartPulse,
     name: "Medical Devices",
     desc: "Biomechanical simulation, implant fatigue analysis, surgical tool optimization, and medical device compliance testing.",
     applications: ["Implant FEA", "Biomechanics CFD", "Surgical tool design", "FDA compliance simulation"],
+    image: "/images/industry-medical.svg",
   },
   {
     icon: Cog,
     name: "Industrial Machinery",
     desc: "Heavy equipment structural analysis, rotating machinery dynamics, conveyor system optimization, and hydraulic system simulation.",
     applications: ["Machine frame FEA", "Rotordynamics", "Hydraulic CFD", "Fatigue analysis"],
+    image: "/images/industry-industrial.svg",
   },
   {
     icon: Smartphone,
     name: "Consumer Electronics",
     desc: "Drop test simulation, thermal management for electronics, enclosure structural analysis, and reliability prediction.",
     applications: ["Drop simulation", "Thermal CFD", "Enclosure FEA", "Reliability testing"],
+    image: "/images/industry-electronics.svg",
   },
 ];
 
@@ -125,9 +132,12 @@ function IndustriesGrid() {
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="aspect-[4/3] rounded-2xl bg-grey-50 border border-grey-200 p-8 flex items-center justify-center">
-                  <Icon className="w-24 h-24 text-cyan/20" />
-                </div>
+                <img
+                  src={ind.image}
+                  alt={ind.name}
+                  className="w-full aspect-[4/3] rounded-2xl object-cover border border-grey-200"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           );

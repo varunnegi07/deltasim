@@ -43,21 +43,36 @@ function IntroSection() {
   return (
     <section ref={ref} className="min-h-[50vh] md:min-h-[60vh] flex items-center gradient-navy pt-20 md:pt-24">
       <div className="container-main">
-        <motion.div {...fadeUp} animate={isInView ? fadeUp.animate : {}} className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Talent Solutions</span>
-          </div>
-          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6">
-            Engineering Workforce{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">as a Service</span>
-          </h1>
-          <p className="text-grey-300 text-base md:text-xl leading-relaxed">
-            DeltaSim provides highly skilled engineering professionals for
-            project-based and long-term engagements. Scale your engineering
-            capacity on demand.
-          </p>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <motion.div {...fadeUp} animate={isInView ? fadeUp.animate : {}} className="flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
+              <span className="w-2 h-2 rounded-full bg-cyan" />
+              <span className="text-cyan text-xs font-medium tracking-wider uppercase">Talent Solutions</span>
+            </div>
+            <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6">
+              Engineering Workforce{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">as a Service</span>
+            </h1>
+            <p className="text-grey-300 text-base md:text-xl leading-relaxed">
+              DeltaSim provides highly skilled engineering professionals for
+              project-based and long-term engagements. Scale your engineering
+              capacity on demand.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex-1 w-full max-w-md"
+          >
+            <img
+              src="/images/talent-team.svg"
+              alt="Engineering team collaboration"
+              className="w-full rounded-2xl"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

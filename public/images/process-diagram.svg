@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#F9FAFB" rx="16"/>
+  <g transform="translate(50,150)">
+    <circle r="20" fill="#38BDF8" opacity="0.2"/>
+    <circle r="8" fill="#38BDF8"/>
+    <text x="0" y="35" text-anchor="middle" fill="#6B7280" font-family="system-ui" font-size="8">Discovery</text>
+  </g>
+  <g transform="translate(150,150)">
+    <circle r="20" fill="#38BDF8" opacity="0.2"/>
+    <circle r="8" fill="#38BDF8"/>
+    <text x="0" y="35" text-anchor="middle" fill="#6B7280" font-family="system-ui" font-size="8">Design</text>
+  </g>
+  <g transform="translate(250,150)">
+    <circle r="20" fill="#38BDF8" opacity="0.2"/>
+    <circle r="8" fill="#38BDF8"/>
+    <text x="0" y="35" text-anchor="middle" fill="#6B7280" font-family="system-ui" font-size="8">Simulate</text>
+  </g>
+  <g transform="translate(350,150)">
+    <circle r="20" fill="#38BDF8" opacity="0.2"/>
+    <circle r="8" fill="#38BDF8"/>
+    <text x="0" y="35" text-anchor="middle" fill="#6B7280" font-family="system-ui" font-size="8">Optimize</text>
+  </g>
+  <g transform="translate(450,150)">
+    <circle r="20" fill="#38BDF8" opacity="0.2"/>
+    <circle r="8" fill="#38BDF8"/>
+    <text x="0" y="35" text-anchor="middle" fill="#6B7280" font-family="system-ui" font-size="8">Deliver</text>
+  </g>
+  <g stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4,3">
+    <line x1="78" y1="150" x2="122" y2="150"/>
+    <line x1="178" y1="150" x2="222" y2="150"/>
+    <line x1="278" y1="150" x2="322" y2="150"/>
+    <line x1="378" y1="150" x2="422" y2="150"/>
+  </g>
+</svg>

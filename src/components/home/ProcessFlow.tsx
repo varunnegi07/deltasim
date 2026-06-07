@@ -43,6 +43,13 @@ export default function ProcessFlow() {
           </p>
         </motion.div>
 
+        <img
+          src="/images/process-diagram.svg"
+          alt="Engineering process flow"
+          className="w-full max-w-2xl mx-auto mb-10 hidden md:block"
+          loading="lazy"
+        />
+
         <div className="relative">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-grey-200 -translate-y-1/2" />
 

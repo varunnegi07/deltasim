@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#F3F4F6" rx="16"/>
+  <g transform="translate(300,200)">
+    <circle r="100" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+    <circle r="70" fill="none" stroke="#D1D5DB" stroke-width="0.5"/>
+    <circle r="40" fill="#38BDF8" opacity="0.08"/>
+    <g stroke="#38BDF8" stroke-width="0.8" opacity="0.25" fill="none">
+      <path d="M-30-80 Q0-90 30-70 Q50-50 60-20"/>
+      <path d="M-60-50 Q-40-70 0-60 Q40-50 60-30"/>
+      <path d="M-80-20 Q-60-40 0-30 Q50-20 70 10"/>
+    </g>
+    <g transform="translate(0,-10)">
+      <circle cx="0" cy="0" r="6" fill="#38BDF8"/>
+      <g transform="translate(10,-10)" stroke="#38BDF8" stroke-width="0.6" opacity="0.4">
+        <line x1="0" y1="0" x2="20" y2="-15"/>
+        <line x1="0" y1="0" x2="15" y2="10"/>
+        <line x1="0" y1="0" x2="-10" y2="15"/>
+      </g>
+    </g>
+    <g transform="translate(0,80)">
+      <rect x="-80" y="-4" width="160" height="8" rx="4" fill="#E5E7EB"/>
+      <rect x="-60" y="-4" width="120" height="8" rx="4" fill="#38BDF8" opacity="0.4"/>
+    </g>
+    <g transform="translate(0,100)">
+      <rect x="-60" y="-3" width="120" height="6" rx="3" fill="#E5E7EB"/>
+      <rect x="-40" y="-3" width="80" height="6" rx="3" fill="#38BDF8" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

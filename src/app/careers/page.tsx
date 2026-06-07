@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Cpu, Globe, Users, Target, ArrowRight, Upload, Send } from "lucide-react";
+import { Cpu, Globe, Users, Target, Upload, Send } from "lucide-react";
 
 const roles = [
   "FEA Engineer",
@@ -35,20 +35,35 @@ function HeroSection() {
   return (
     <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
       <div className="container-main">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Careers</span>
-          </div>
-          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
-            Engineer the Future with{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">DeltaSim</span>
-          </h1>
-          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
-            Join a team of world-class simulation engineers working on complex
-            challenges across aerospace, automotive, energy, and beyond.
-          </p>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
+              <span className="w-2 h-2 rounded-full bg-cyan" />
+              <span className="text-cyan text-xs font-medium tracking-wider uppercase">Careers</span>
+            </div>
+            <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
+              Engineer the Future with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">DeltaSim</span>
+            </h1>
+            <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+              Join a team of world-class simulation engineers working on complex
+              challenges across aerospace, automotive, energy, and beyond.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex-1 w-full max-w-md"
+          >
+            <img
+              src="/images/careers-growth.svg"
+              alt="Career growth at DeltaSim"
+              className="w-full rounded-2xl"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -164,6 +179,35 @@ function CultureSection() {
 
 function ApplySection() {
   const [selectedRole, setSelectedRole] = useState("");
+  const [fileName, setFileName] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState({ name: "", email: "", coverLetter: "" });
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) setFileName(file.name);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Career application:", { ...formData, selectedRole, fileName });
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section className="section-padding bg-grey-50">
+        <div className="container-main max-w-lg mx-auto text-center py-20">
+          <div className="w-16 h-16 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-6">
+            <Send className="w-8 h-8 text-cyan" />
+          </div>
+          <h2 className="font-heading font-bold text-3xl text-navy mb-4">Application Received!</h2>
+          <p className="text-grey-500 text-lg">We&apos;ll review your application and reach out soon.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="section-padding bg-grey-50">
@@ -172,15 +216,15 @@ function ApplySection() {
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Apply Now</h2>
           <p className="text-grey-500 text-lg">Send us your application</p>
         </div>
-        <form className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-navy mb-1.5">Full Name</label>
-              <input type="text" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="John Smith" />
+              <input type="text" value={formData.name} onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="John Smith" />
             </div>
             <div>
               <label className="block text-sm font-medium text-navy mb-1.5">Email</label>
-              <input type="email" className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="john@company.com" />
+              <input type="email" value={formData.email} onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors" placeholder="john@company.com" />
             </div>
           </div>
           <div>
@@ -188,6 +232,7 @@ function ApplySection() {
             <select
               value={selectedRole}
               onChange={(e) => setSelectedRole(e.target.value)}
+              required
               className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors"
             >
               <option value="">Select a role</option>
@@ -198,15 +243,31 @@ function ApplySection() {
           </div>
           <div>
             <label className="block text-sm font-medium text-navy mb-1.5">Resume / CV</label>
-            <div className="border-2 border-dashed border-grey-200 rounded-lg p-8 text-center hover:border-cyan transition-colors cursor-pointer">
+            <div
+              className="border-2 border-dashed border-grey-200 rounded-lg p-8 text-center hover:border-cyan transition-colors cursor-pointer"
+              onClick={() => fileInputRef.current?.click()}
+            >
               <Upload className="w-8 h-8 text-grey-400 mx-auto mb-2" />
-              <p className="text-grey-500 text-sm">Click to upload or drag and drop</p>
-              <p className="text-grey-400 text-xs mt-1">PDF, DOC (max 10MB)</p>
+              {fileName ? (
+                <p className="text-cyan text-sm font-medium">{fileName}</p>
+              ) : (
+                <>
+                  <p className="text-grey-500 text-sm">Click to upload or drag and drop</p>
+                  <p className="text-grey-400 text-xs mt-1">PDF, DOC (max 10MB)</p>
+                </>
+              )}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                className="hidden"
+              />
             </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-navy mb-1.5">Cover Letter (Optional)</label>
-            <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors resize-none" placeholder="Tell us why you'd be a great fit..." />
+            <textarea rows={4} value={formData.coverLetter} onChange={(e) => setFormData((p) => ({ ...p, coverLetter: e.target.value }))} className="w-full px-4 py-3 rounded-lg border border-grey-200 bg-white text-navy focus:outline-none focus:border-cyan transition-colors resize-none" placeholder="Tell us why you'd be a great fit..." />
           </div>
           <button
             type="submit"
