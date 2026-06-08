@@ -31,6 +31,7 @@ export default function VideoPlayer({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showControls, setShowControls] = useState(false);
+  const [playBlocked, setPlayBlocked] = useState(false);
   const mobile = isMobile();
 
   const togglePlay = useCallback(() => {
@@ -72,15 +73,22 @@ export default function VideoPlayer({
     return () => observer.disconnect();
   }, [type, mobile]);
 
+  const handleBackgroundPlay = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play()
+      .then(() => {
+        setIsPlaying(true);
+        setPlayBlocked(false);
+      })
+      .catch(() => setPlayBlocked(true));
+  }, []);
+
   useEffect(() => {
     if (type === "background" && isInView) {
-      const v = videoRef.current;
-      if (v) {
-        v.play();
-        setIsPlaying(true);
-      }
+      handleBackgroundPlay();
     }
-  }, [type, isInView]);
+  }, [type, isInView, handleBackgroundPlay]);
 
   if (type === "background") {
 
@@ -101,6 +109,17 @@ export default function VideoPlayer({
           <source src={src} type="video/mp4" />
         </video>
         {overlay && <div className="absolute inset-0 bg-navy/60" />}
+        {playBlocked && (
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <button
+              onClick={(e) => { e.stopPropagation(); handleBackgroundPlay(); }}
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan/90 text-navy flex items-center justify-center backdrop-blur-sm shadow-lg hover:bg-cyan transition-colors active:scale-95"
+              aria-label="Play video"
+            >
+              <Play className="w-7 h-7 md:w-8 md:h-8 ml-1" />
+            </button>
+          </div>
+        )}
       </div>
     );
   }
