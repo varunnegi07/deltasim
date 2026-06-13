@@ -11,15 +11,50 @@ import {
   CheckCircle,
   ArrowRight,
   Sparkles,
+  PenTool,
 } from "lucide-react";
 
 const categories = [
   {
+    id: "cad",
+    title: "CAD & Design Programs",
+    icon: PenTool,
+    description: "Professional CAD training programs covering 3D modeling, drafting, design engineering, and product development using industry-standard tools.",
+    courses: [
+      {
+        title: "CAD Master Program",
+        image: "/images/payments-cad.jpg",
+        description: "A comprehensive master program covering 3D CAD modeling, surface design, assembly management, and detailed drafting. Includes hands-on training in SolidWorks, CATIA, and NX.",
+        price: "XXXX",
+        features: [
+          "3D parametric modeling & surfacing",
+          "Assembly & large part management",
+          "GD&T and engineering drawings",
+          "Capstone design project",
+        ],
+        badge: "Most Popular",
+      },
+    ],
+  },
+  {
     id: "cae",
-    title: "CAE Academic Courses",
+    title: "CAE & Simulation Programs",
     icon: BookOpen,
     description: "Comprehensive CAE academic programs designed to equip students and professionals with cutting-edge simulation skills for modern engineering challenges.",
     courses: [
+      {
+        title: "CAE Academic Courses",
+        image: "/images/payments-cae-academic.jpg",
+        description: "Foundational CAE courses covering engineering theory, finite element methods, and practical simulation workflows. Ideal for students and early-career engineers.",
+        price: "XXXX",
+        features: [
+          "Engineering theory & FEM fundamentals",
+          "Introduction to FEA & CFD",
+          "Hands-on simulation projects",
+          "Certificate of completion",
+        ],
+        badge: "New",
+      },
       {
         title: "CAE Master Program",
         image: "/images/payments-cae-master.jpg",
@@ -31,7 +66,7 @@ const categories = [
           "Capstone simulation project",
           "Certificate upon completion",
         ],
-        badge: "Most Popular",
+        badge: null,
       },
       {
         title: "CAE Modeler Courses",
@@ -50,10 +85,23 @@ const categories = [
   },
   {
     id: "civil",
-    title: "CIVIL Academic Structural Courses",
+    title: "CIVIL & Structural Programs",
     icon: Building2,
     description: "Specialized civil engineering programs focused on structural analysis, design codes, and simulation-driven design for buildings, bridges, and infrastructure.",
     courses: [
+      {
+        title: "CIVIL Academic Structural Courses",
+        image: "/images/payments-civil.jpg",
+        description: "Comprehensive civil engineering courses covering structural analysis, RCC design, steel structures, and construction methodology with practical project work.",
+        price: "XXXX",
+        features: [
+          "Structural analysis & design",
+          "RCC & steel structure design",
+          "Construction methodology",
+          "Industry-standard code compliance",
+        ],
+        badge: null,
+      },
       {
         title: "Master Program in Electric/Hybrid Vehicle",
         image: "/images/payments-ev.jpg",
@@ -152,7 +200,7 @@ function CategorySection({ category }: { category: typeof categories[number] }) 
           {category.description}
         </p>
       </motion.div>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {category.courses.map((course, i) => (
           <CourseCard key={course.title} course={course} index={i} />
         ))}
@@ -178,7 +226,7 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
           : "border-white/10 bg-white/[0.03] hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
       }`}
     >
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <img
           src={course.image}
           alt={course.title}
@@ -189,10 +237,10 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-[#0a0f1a]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1a]/80" />
       </div>
-      <div className="p-8 flex flex-col flex-1 relative">
+      <div className="p-6 flex flex-col flex-1 relative">
         {course.badge && (
           <span
-            className={`absolute -top-3 right-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider shadow-2xl ${
+            className={`absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-2xl ${
               isSold
                 ? "bg-zinc-800 text-zinc-400 border border-zinc-700"
                 : "bg-gradient-to-r from-cyan to-blue-500 text-white shadow-cyan/30"
@@ -201,35 +249,35 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
             {course.badge}
           </span>
         )}
-        <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-3">
+        <h3 className="font-heading font-bold text-lg md:text-xl text-white mb-2">
           {course.title}
         </h3>
-        <p className="text-grey-400 leading-relaxed mb-6 flex-1">
+        <p className="text-grey-400 text-sm leading-relaxed mb-5 flex-1">
           {course.description}
         </p>
-        <div className="space-y-3 mb-8">
+        <div className="space-y-2 mb-6">
           {course.features.map((f) => (
-            <div key={f} className="flex items-start gap-3 text-sm text-grey-400">
-              <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${isSold ? "text-zinc-600" : "text-cyan"}`} />
+            <div key={f} className="flex items-start gap-2.5 text-xs text-grey-400">
+              <CheckCircle className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${isSold ? "text-zinc-600" : "text-cyan"}`} />
               {f}
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-between pt-6 border-t border-white/10">
+        <div className="flex items-center justify-between pt-5 border-t border-white/10">
           <div>
-            <span className="text-xs text-zinc-500 uppercase tracking-wider font-medium">Course Fee</span>
-            <p className="font-heading font-bold text-3xl text-white">{course.price}</p>
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">Course Fee</span>
+            <p className="font-heading font-bold text-2xl text-white">{course.price}</p>
           </div>
           <button
             disabled={isSold}
-            className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all flex items-center gap-2 ${
+            className={`px-5 py-2.5 rounded-lg font-semibold text-xs transition-all flex items-center gap-2 ${
               isSold
                 ? "bg-zinc-800/50 text-zinc-500 cursor-not-allowed border border-zinc-800"
                 : "bg-gradient-to-r from-cyan to-blue-500 text-white hover:from-cyan-dark hover:to-blue-600 shadow-xl shadow-cyan/20 hover:shadow-cyan/30"
             }`}
           >
             {isSold ? "Sold Out" : "Enroll Now"}
-            {isSold ? null : <ArrowRight className="w-4 h-4" />}
+            {isSold ? null : <ArrowRight className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>
