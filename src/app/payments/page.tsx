@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   BookOpen,
   Building2,
@@ -12,6 +12,12 @@ import {
   ArrowRight,
   Sparkles,
   PenTool,
+  Cpu,
+  Globe,
+  Users,
+  Target,
+  Upload,
+  Send,
 } from "lucide-react";
 
 const categories = [
@@ -119,11 +125,28 @@ const categories = [
   },
 ];
 
+const roles = [
+  "FEA Engineer",
+  "CFD Engineer",
+  "Mechanical Design Engineer",
+  "Simulation Analyst",
+];
+
+const cultureValues = [
+  { icon: Cpu, text: "Precision-driven engineering culture" },
+  { icon: Globe, text: "Research-oriented work environment" },
+  { icon: Users, text: "Collaborative, cross-functional teams" },
+  { icon: Target, text: "Continuous learning and development" },
+];
+
 export default function PaymentsPage() {
   return (
     <>
       <HeroSection />
       <CourseCategories />
+      <WhyJoin />
+      <OpenRoles />
+      <ApplySection />
     </>
   );
 }
@@ -282,5 +305,192 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
         </div>
       </div>
     </motion.div>
+  );
+}
+
+function WhyJoin() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <section ref={ref} className="section-padding bg-[#0a0f1a]">
+      <div className="container-main">
+        <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
+            <span className="w-2 h-2 rounded-full bg-cyan" />
+            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Careers</span>
+          </div>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Why Join DeltaSim?</h2>
+          <p className="text-grey-400 text-lg max-w-2xl mx-auto">Work on real CAE projects that push the boundaries of simulation technology</p>
+        </motion.div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { icon: Cpu, title: "Engineering Innovation", desc: "Work on real CAE projects that push the boundaries of simulation technology" },
+            { icon: Globe, title: "Industry Exposure", desc: "Gain experience across aerospace, automotive, energy, and medical device sectors" },
+            { icon: Users, title: "Expert Team", desc: "Collaborate with senior engineers who are leaders in their simulation domains" },
+          ].map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="p-6 rounded-xl bg-white/[0.03] border border-white/10 text-center group hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
+              >
+                <div className="w-14 h-14 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan/20 transition-colors">
+                  <Icon className="w-7 h-7 text-cyan" />
+                </div>
+                <h3 className="font-heading font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-grey-400 text-sm">{item.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function OpenRoles() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <section ref={ref} className="section-padding bg-[#050B18]">
+      <div className="container-main">
+        <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Open Roles</h2>
+          <p className="text-grey-400 text-lg">Current opportunities at DeltaSim</p>
+        </motion.div>
+        <div className="max-w-3xl mx-auto space-y-4">
+          {roles.map((role, i) => (
+            <motion.div
+              key={role}
+              initial={{ opacity: 0, x: -10 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.3, delay: i * 0.08 }}
+              className="flex items-center justify-between p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
+            >
+              <div>
+                <h3 className="font-heading font-bold text-white">{role}</h3>
+                <p className="text-grey-400 text-sm">Full-time | Remote/Hybrid</p>
+              </div>
+              <span className="px-4 py-2 bg-gradient-to-r from-cyan to-blue-500 text-white font-semibold text-sm rounded-lg hover:from-cyan-dark hover:to-blue-600 transition-all cursor-pointer shadow-xl shadow-cyan/20">
+                Apply Now
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ApplySection() {
+  const [selectedRole, setSelectedRole] = useState("");
+  const [fileName, setFileName] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState({ name: "", email: "", coverLetter: "" });
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) setFileName(file.name);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Career application:", { ...formData, selectedRole, fileName });
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section className="section-padding bg-[#0a0f1a]">
+        <div className="container-main max-w-lg mx-auto text-center py-20">
+          <div className="w-16 h-16 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-6">
+            <Send className="w-8 h-8 text-cyan" />
+          </div>
+          <h2 className="font-heading font-bold text-3xl text-white mb-4">Application Received!</h2>
+          <p className="text-grey-400 text-lg">We&apos;ll review your application and reach out soon.</p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="section-padding bg-[#0a0f1a]">
+      <div className="container-main max-w-2xl mx-auto">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
+            <Send className="w-3.5 h-3.5 text-cyan" />
+            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Apply</span>
+          </div>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Apply Now</h2>
+          <p className="text-grey-400 text-lg">Send us your application</p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-medium text-grey-300 mb-1.5">Full Name</label>
+              <input type="text" value={formData.name} onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="John Smith" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-grey-300 mb-1.5">Email</label>
+              <input type="email" value={formData.email} onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="john@company.com" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-grey-300 mb-1.5">Role</label>
+            <select
+              value={selectedRole}
+              onChange={(e) => setSelectedRole(e.target.value)}
+              required
+              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors"
+            >
+              <option value="" className="bg-[#0a0f1a]">Select a role</option>
+              {roles.map((r) => (
+                <option key={r} value={r} className="bg-[#0a0f1a]">{r}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-grey-300 mb-1.5">Resume / CV</label>
+            <div
+              className="border-2 border-dashed border-white/10 rounded-lg p-8 text-center hover:border-cyan transition-colors cursor-pointer"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <Upload className="w-8 h-8 text-grey-400 mx-auto mb-2" />
+              {fileName ? (
+                <p className="text-cyan text-sm font-medium">{fileName}</p>
+              ) : (
+                <>
+                  <p className="text-grey-400 text-sm">Click to upload or drag and drop</p>
+                  <p className="text-grey-500 text-xs mt-1">PDF, DOC (max 10MB)</p>
+                </>
+              )}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-grey-300 mb-1.5">Cover Letter (Optional)</label>
+            <textarea rows={4} value={formData.coverLetter} onChange={(e) => setFormData((p) => ({ ...p, coverLetter: e.target.value }))} className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors resize-none placeholder:text-grey-500" placeholder="Tell us why you'd be a great fit..." />
+          </div>
+          <button
+            type="submit"
+            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-dark hover:to-blue-600 transition-all shadow-xl shadow-cyan/20"
+          >
+            Submit Application <Send className="w-4 h-4" />
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }

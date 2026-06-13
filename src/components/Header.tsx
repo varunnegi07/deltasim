@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Talent", href: "/talent" },
   { label: "Industries", href: "/industries" },
   { label: "Payments", href: "/payments" },
-  { label: "Careers", href: "/careers" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -49,15 +48,6 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="px-5 py-2.5 bg-cyan text-navy font-semibold text-sm rounded-lg hover:bg-cyan-dark transition-colors"
-          >
-            Request Consultation
-          </Link>
-        </div>
-
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2 text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -91,13 +81,6 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 px-5 py-3 bg-cyan text-navy font-semibold text-sm rounded-lg text-center hover:bg-cyan-dark transition-colors min-h-[44px] flex items-center justify-center"
-              >
-                Request Consultation
-              </Link>
             </div>
           </motion.div>
         )}

@@ -34,12 +34,6 @@ export default function FinalCTA() {
             >
               Contact Us
             </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors"
-            >
-              Request Consultation
-            </Link>
           </div>
         </motion.div>
       </div>
