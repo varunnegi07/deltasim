@@ -43,7 +43,7 @@ export default function DualOffering() {
               ],
               href: "/solutions",
               cta: "Explore Solutions",
-              image: "/images/dual-engineering.svg",
+              image: "/images/dual-engineering.jpg",
             },
             {
               icon: Users,
@@ -58,7 +58,7 @@ export default function DualOffering() {
               ],
               href: "/talent",
               cta: "Hire Talent",
-              image: "/images/dual-talent.svg",
+              image: "/images/dual-talent.jpg",
             },
           ].map((offering, i) => {
             const Icon = offering.icon;
@@ -78,7 +78,7 @@ export default function DualOffering() {
                     <img
                       src={offering.image}
                       alt={offering.title}
-                      className="w-full h-32 md:h-40 object-contain mb-4 rounded-lg"
+                      className="w-full h-40 md:h-48 object-cover mb-4 rounded-xl"
                       loading="lazy"
                     />
                     <h3 className="font-heading font-bold text-2xl text-navy mb-3">
