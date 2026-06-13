@@ -18,6 +18,7 @@ const solutions = [
   {
     id: "mechanical-design",
     icon: DraftingCompass,
+    image: "/images/sol-mechanical.jpg",
     title: "Mechanical Design",
     desc: "Comprehensive mechanical design services from concept to production-ready CAD models. Our design engineers deliver manufacturable, optimized designs that meet stringent industry standards.",
     features: [
@@ -32,6 +33,7 @@ const solutions = [
   {
     id: "fea",
     icon: Binary,
+    image: "/images/sol-fea.jpg",
     title: "FEA Structural Analysis",
     desc: "High-fidelity finite element analysis for structural integrity assessment, failure prediction, and design validation across static, dynamic, and fatigue loading conditions.",
     features: [
@@ -46,6 +48,7 @@ const solutions = [
   {
     id: "cfd",
     icon: Thermometer,
+    image: "/images/sol-cfd.jpg",
     title: "CFD & Thermal Analysis",
     desc: "Advanced computational fluid dynamics and thermal simulation for fluid flow, heat transfer, and aerodynamics optimization across complex engineering systems.",
     features: [
@@ -60,6 +63,7 @@ const solutions = [
   {
     id: "optimization",
     icon: GaugeCircle,
+    image: "/images/sol-optimization.jpg",
     title: "Optimization Engineering",
     desc: "Systematic design optimization using advanced numerical methods to achieve weight reduction, performance improvement, and cost efficiency.",
     features: [
@@ -74,6 +78,7 @@ const solutions = [
   {
     id: "failure-analysis",
     icon: AlertTriangle,
+    image: "/images/sol-failure.jpg",
     title: "Failure Analysis",
     desc: "Root cause investigation and failure prediction services to identify failure mechanisms, improve product reliability, and reduce warranty costs.",
     features: [
@@ -166,8 +171,13 @@ function SolutionsList() {
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="aspect-[4/3] rounded-2xl bg-grey-50 border border-grey-200 p-8 flex items-center justify-center">
-                  <Icon className="w-24 h-24 text-cyan/20" />
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-grey-200 shadow-md">
+                  <img
+                    src={sol.image}
+                    alt={sol.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </motion.div>
