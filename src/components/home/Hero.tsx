@@ -82,9 +82,19 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="hidden lg:block relative"
+            className="hidden lg:flex flex-col items-center relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
+            <div className="relative w-72 h-72 mb-8">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan/30 to-blue-500/30 animate-pulse" />
+              <div className="absolute inset-2 rounded-full border border-cyan/20 backdrop-blur-sm bg-navy/60 flex items-center justify-center">
+                <div className="absolute inset-4 rounded-full border border-dashed border-cyan/30" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan/10 to-transparent" />
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center shadow-2xl shadow-cyan/30">
+                  <span className="text-white font-heading font-bold text-5xl">D</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square max-w-lg mx-auto w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-blue-500/20 rounded-3xl backdrop-blur-sm" />
               <div className="absolute inset-4 bg-navy-light/80 rounded-2xl border border-white/10 overflow-hidden backdrop-blur-sm">
                 <div className="p-6 space-y-4">
