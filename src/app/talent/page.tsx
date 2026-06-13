@@ -41,15 +41,24 @@ function IntroSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section ref={ref} className="min-h-[50vh] md:min-h-[60vh] flex items-center gradient-navy pt-20 md:pt-24">
-      <div className="container-main">
+    <section ref={ref} className="relative min-h-[55vh] md:min-h-[65vh] flex items-center pt-24 md:pt-28 overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero-talent.jpg"
+          alt="Engineering team"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/80 to-[#050B18]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent" />
+      </div>
+      <div className="container-main relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <motion.div {...fadeUp} animate={isInView ? fadeUp.animate : {}} className="flex-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-cyan" />
               <span className="text-cyan text-xs font-medium tracking-wider uppercase">Talent Solutions</span>
             </div>
-            <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6">
+            <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 md:mb-6">
               Engineering Workforce{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">as a Service</span>
             </h1>
@@ -58,19 +67,6 @@ function IntroSection() {
               project-based and long-term engagements. Scale your engineering
               capacity on demand.
             </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex-1 w-full max-w-md"
-          >
-            <img
-              src="/images/talent-team.svg"
-              alt="Engineering team collaboration"
-              className="w-full rounded-2xl"
-              loading="lazy"
-            />
           </motion.div>
         </div>
       </div>

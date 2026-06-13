@@ -99,16 +99,24 @@ export default function SolutionsPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
-      <div className="container-main">
+    <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-center pt-24 md:pt-28 overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero-solutions.jpg"
+          alt="Engineering solutions"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/80 to-[#050B18]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent" />
+      </div>
+      <div className="container-main relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
-            <div className="flex-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
+          <div className="max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-cyan" />
             <span className="text-cyan text-xs font-medium tracking-wider uppercase">Solution Offerings</span>
           </div>
-          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
             Comprehensive Engineering{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Solutions</span>
           </h1>
@@ -117,15 +125,6 @@ function HeroSection() {
             high-fidelity simulation and optimization — delivered with precision
             and technical rigor.
           </p>
-            </div>
-            <div className="flex-shrink-0 hidden md:block">
-              <img
-                src="/images/dual-engineering.svg"
-                alt="Engineering solutions"
-                className="w-48 h-32 object-contain"
-                loading="lazy"
-              />
-            </div>
           </div>
         </motion.div>
       </div>
