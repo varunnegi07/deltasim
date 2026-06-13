@@ -14,6 +14,15 @@ export default function Home() {
       <Hero />
       <MetricsStrip />
       <DualOffering />
+      <section className="section-padding bg-[#0a0f1a]">
+        <div className="container-main">
+          <img
+            src="/images/hero-image.png"
+            alt="DeltaSim Engineering"
+            className="w-full rounded-2xl border border-white/10 shadow-2xl"
+          />
+        </div>
+      </section>
       <CoreServices />
       <IndustriesPreview />
       <WhyDeltaSim />
