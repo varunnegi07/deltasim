@@ -14,6 +14,8 @@ const navLinks = [
   { label: "Careers", href: "/careers" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Login", href: "/login" },
+  { label: "Sign Up", href: "/signup" },
 ];
 
 export default function Header() {
