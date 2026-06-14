@@ -16,7 +16,7 @@ export default function Home() {
       <DualOffering />
       <div className="container-main">
         <img
-          src="/images/hero-image.png"
+          src="/images/hero-image.jpg"
           alt="DeltaSim Engineering"
           className="w-full"
         />
