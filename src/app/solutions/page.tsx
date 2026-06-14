@@ -10,8 +10,9 @@ import {
   Thermometer,
   GaugeCircle,
   AlertTriangle,
-  ArrowRight,
+  Cog,
   CheckCircle,
+  ArrowRight,
 } from "lucide-react";
 
 const solutions = [
@@ -88,6 +89,51 @@ const solutions = [
       "Corrosion and environmental degradation",
       "Warranty claim investigation",
       "Material selection and validation",
+    ],
+  },
+  {
+    id: "multi-body-dynamics",
+    icon: GaugeCircle,
+    image: "/images/sol-mbd.jpg",
+    title: "Multi-Body Dynamics",
+    desc: "Kinematic and dynamic simulation of mechanisms, linkages, and assemblies using Adams and RecurDyn to predict loads, motion, and performance across operating conditions.",
+    features: [
+      "Kinematic & dynamic simulation",
+      "Mechanism and linkage analysis",
+      "Load prediction for downstream FEA",
+      "Motion envelope verification",
+      "Contact and friction modeling",
+      "Flexible body dynamics",
+    ],
+  },
+  {
+    id: "prototyping",
+    icon: Cog,
+    image: "/images/sol-prototyping.jpg",
+    title: "Prototyping Support",
+    desc: "Engineering support for rapid prototyping, additive manufacturing, CNC machining specifications, and prototype validation test planning to accelerate time-to-market.",
+    features: [
+      "Rapid prototyping support",
+      "Additive manufacturing specifications",
+      "CNC machining drawings",
+      "Prototype validation planning",
+      "Material selection guidance",
+      "Design for manufacturing (DFM)",
+    ],
+  },
+  {
+    id: "product-validation",
+    icon: CheckCircle,
+    image: "/images/sol-validation.jpg",
+    title: "Product Validation & Testing",
+    desc: "Development of test plans, instrumentation guidance, correlation of simulation models to physical test data, and regulatory compliance support for certification.",
+    features: [
+      "Test plan development",
+      "FEA-to-test correlation",
+      "Instrumentation guidance",
+      "Regulatory compliance support",
+      "Design certification reports",
+      "Field failure reproduction",
     ],
   },
 ];

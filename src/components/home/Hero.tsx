@@ -20,21 +20,20 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
               <span className="text-cyan text-xs font-medium tracking-wider uppercase">
-                Engineering Excellence Since 2014
+                SIMULATE &bull; INNOVATE &bull; ENGINEER
               </span>
             </div>
-            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-6">
-              Advanced Engineering Simulation{" "}
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-4">
+              Precision at the{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">
-                & Talent Solutions
+                Core of Every Design
               </span>
             </h1>
             <p className="text-grey-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
-              CAE | FEA | CFD | Design Engineering | Optimization | Expert
-              Talent Deployment
+              Mechanical Design &bull; Simulation &bull; Prototyping &bull; Optimization
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

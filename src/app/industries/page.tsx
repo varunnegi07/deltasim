@@ -12,6 +12,7 @@ import {
   HeartPulse,
   Cog,
   Smartphone,
+  Building2,
   ArrowRight,
 } from "lucide-react";
 
@@ -64,6 +65,13 @@ const industries = [
     desc: "Drop test simulation, thermal management for electronics, enclosure structural analysis, and reliability prediction.",
     applications: ["Drop simulation", "Thermal CFD", "Enclosure FEA", "Reliability testing"],
     image: "/images/ind-electronics.jpg",
+  },
+  {
+    icon: Building2,
+    name: "Construction & Civil Infrastructure",
+    desc: "Structural steel connection design, composite structure analysis, vibration analysis for buildings and bridges, and construction methodology simulation.",
+    applications: ["Structural steel FEA", "Composite structure analysis", "Vibration analysis", "Bridge load simulation"],
+    image: "/images/ind-civil.jpg",
   },
 ];
 

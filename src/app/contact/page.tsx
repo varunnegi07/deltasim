@@ -119,9 +119,9 @@ function ContactFormSection({
 
             <div className="space-y-5">
               {[
-                { icon: Mail, label: "Email", value: "engineering@deltasim.com" },
-                { icon: Phone, label: "Phone", value: "+1 (888) 555-0199" },
-                { icon: MapPin, label: "Office", value: "Engineering Hub, Innovation District" },
+                { icon: Mail, label: "Email", value: "info@deltasimengineering.com" },
+                { icon: Phone, label: "Phone", value: "+91-7889231302" },
+                { icon: MapPin, label: "Website", value: "www.deltasimengineering.com" },
               ].map((item) => {
                 const Icon = item.icon;
                 return (

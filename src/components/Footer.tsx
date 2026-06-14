@@ -96,7 +96,7 @@ export default function Footer() {
             reserved.
           </p>
           <p className="text-grey-500 text-sm">
-            Precision Engineering. Simulation Excellence.
+            Precision at the Core of Every Design
           </p>
         </div>
       </div>
