@@ -98,8 +98,8 @@ function MissionSection() {
             className="p-8 rounded-2xl bg-grey-50 border border-grey-200"
           >
             <img
-              src="/images/hero-image.jpg"
-              alt="Engineering innovation"
+              src="/images/about-rocket.jpg"
+              alt="Rocket launch"
               className="w-full rounded-xl mb-6"
             />
             <h3 className="font-heading font-bold text-2xl text-navy mb-4">Our Mission</h3>
