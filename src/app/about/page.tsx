@@ -98,10 +98,9 @@ function MissionSection() {
             className="p-8 rounded-2xl bg-grey-50 border border-grey-200"
           >
             <img
-              src="/images/about-mission.svg"
+              src="/images/hero-image.jpg"
               alt="Engineering innovation"
-              className="w-full h-32 md:h-40 object-contain mb-6"
-              loading="lazy"
+              className="w-full rounded-xl mb-6"
             />
             <h3 className="font-heading font-bold text-2xl text-navy mb-4">Our Mission</h3>
             <p className="text-grey-600 text-lg leading-relaxed italic">
