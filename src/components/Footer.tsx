@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 order-first">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="/images/logo.png" alt="DeltaSim" className="h-10 w-auto" />
+              <img src="/images/logo.png" alt="DeltaSim" className="h-12 w-auto" />
             </Link>
             <p className="text-grey-400 text-sm leading-relaxed mb-6">
               Advanced engineering simulation and talent solutions for
