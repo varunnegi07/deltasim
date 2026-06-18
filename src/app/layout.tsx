@@ -33,10 +33,9 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    apple: { url: "/apple-touch-icon.svg", type: "image/svg+xml" },
+    apple: { url: "/images/logo.png", type: "image/png" },
   },
   openGraph: {
     title: "DeltaSim | Engineering Simulation & Talent Solutions",

@@ -26,12 +26,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/5">
       <nav className="container-main flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-cyan to-cyan-dark rounded-lg flex items-center justify-center">
-            <span className="text-white font-heading font-bold text-sm">D</span>
-          </div>
-          <span className="font-heading font-bold text-xl text-white tracking-tight">
-            Delta<span className="text-cyan">Sim</span>
-          </span>
+          <img src="/images/logo.png" alt="DeltaSim" className="h-8 w-auto" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
