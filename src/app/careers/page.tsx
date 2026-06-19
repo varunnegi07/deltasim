@@ -318,7 +318,7 @@ function WhyJoin() {
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
             <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Careers</span>
+            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Courses</span>
           </div>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Why Join DeltaSim?</h2>
           <p className="text-grey-400 text-lg max-w-2xl mx-auto">Work on real CAE projects that push the boundaries of simulation technology</p>
