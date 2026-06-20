@@ -13,6 +13,7 @@ import {
   Cog,
   CheckCircle,
   ArrowRight,
+  Cpu,
 } from "lucide-react";
 
 const solutions = [
@@ -29,6 +30,21 @@ const solutions = [
       "BOM creation and management",
       "Tolerance stack-up analysis",
       "Engineering change management",
+    ],
+  },
+  {
+    id: "engine-design",
+    icon: Cpu,
+    image: "/images/sol-engine.jpg",
+    title: "Engine Design & Analysis",
+    desc: "Specialized engine design services covering internal combustion, hybrid, and electric powertrain systems. From concept development through detailed simulation-driven validation for performance, durability, and emissions compliance.",
+    features: [
+      "Combustion system design & simulation",
+      "Thermal management & cooling system design",
+      "Structural integrity of engine components",
+      "NVH optimization for powertrain systems",
+      "Emissions calibration & aftertreatment integration",
+      "Hybrid/electric powertrain architecture",
     ],
   },
   {
