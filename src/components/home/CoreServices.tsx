@@ -56,7 +56,7 @@ export default function CoreServices() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding bg-grey-50">
+    <section ref={ref} className="section-padding bg-bg-secondary">
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +64,10 @@ export default function CoreServices() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             Core Engineering Services
           </h2>
-          <p className="text-grey-500 text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
             End-to-end simulation and design capabilities backed by 10+ years of
             engineering excellence
           </p>
@@ -83,14 +83,14 @@ export default function CoreServices() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <div className="group p-6 lg:p-8 rounded-xl bg-white border border-grey-200 hover-lift">
-                  <div className="w-12 h-12 rounded-lg bg-cyan/10 flex items-center justify-center mb-4 group-hover:bg-cyan group-hover:text-white transition-all">
-                    <Icon className="w-6 h-6 text-cyan group-hover:text-white transition-colors" />
+                <div className="group p-6 lg:p-8 rounded-xl bg-white border border-border hover-lift">
+                  <div className="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-all">
+                    <Icon className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-navy mb-2">
+                  <h3 className="font-heading font-bold text-lg text-primary mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-grey-500 text-sm leading-relaxed">
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>

@@ -160,21 +160,21 @@ function HeroSection() {
           alt="Engineering simulation"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/80 to-[#050B18]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent" />
       </div>
       <div className="container-main relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6 backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-cyan" />
-              <span className="text-cyan text-xs font-medium tracking-wider uppercase">Course Enrollment</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4 md:mb-6 backdrop-blur-sm">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              <span className="text-accent text-xs font-medium tracking-wider uppercase">Course Enrollment</span>
             </div>
-            <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 md:mb-6">
+            <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-primary leading-tight mb-4 md:mb-6">
               Academic Course{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Payments</span>
+              <span className="text-gradient">Payments</span>
             </h1>
-            <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+            <p className="text-text-secondary text-base md:text-xl max-w-3xl leading-relaxed">
               Enroll in our specialized academic programs and courses.
               Secure your spot in industry-recognized training programs.
             </p>
@@ -187,7 +187,7 @@ function HeroSection() {
 
 function CourseCategories() {
   return (
-    <section className="section-padding bg-[#0a0f1a]">
+    <section className="section-padding bg-bg-secondary">
       <div className="container-main space-y-28">
         {categories.map((cat) => (
           <CategorySection key={cat.id} category={cat} />
@@ -211,15 +211,15 @@ function CategorySection({ category }: { category: typeof categories[number] }) 
         className="mb-10"
       >
         <div className="flex items-center gap-4 mb-5">
-          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center shadow-xl shadow-cyan/20">
+          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-blue-500 flex items-center justify-center shadow-xl shadow-accent/20">
             <Icon className="w-7 h-7 text-white" />
           </div>
-          <div className="h-px flex-1 bg-gradient-to-r from-cyan/40 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
         </div>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-3">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">
           {category.title}
         </h2>
-        <p className="text-grey-400 text-lg max-w-3xl leading-relaxed">
+        <p className="text-text-secondary text-lg max-w-3xl leading-relaxed">
           {category.description}
         </p>
       </motion.div>
@@ -245,8 +245,8 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
       transition={{ duration: 0.5, delay: index * 0.15 }}
       className={`relative rounded-2xl border flex flex-col overflow-hidden group ${
         isSold
-          ? "border-white/5 bg-white/[0.02]"
-          : "border-white/10 bg-white/[0.03] hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
+          ? "border-border bg-bg-tertiary"
+          : "border-border bg-white hover:border-accent/30 hover:bg-bg-primary hover:shadow-xl hover:shadow-accent/10 transition-all duration-500"
       }`}
     >
       <div className="relative h-48 overflow-hidden">
@@ -257,8 +257,8 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
             isSold ? "" : "group-hover:scale-110"
           }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-[#0a0f1a]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1a]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary/80" />
       </div>
       <div className="p-6 flex flex-col flex-1 relative">
         {course.badge && (
@@ -266,37 +266,37 @@ function CourseCard({ course, index }: { course: typeof categories[number]["cour
             className={`absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-2xl ${
               isSold
                 ? "bg-zinc-800 text-zinc-400 border border-zinc-700"
-                : "bg-gradient-to-r from-cyan to-blue-500 text-white shadow-cyan/30"
+                : "bg-gradient-to-r from-accent to-blue-500 text-white shadow-accent/30"
             }`}
           >
             {course.badge}
           </span>
         )}
-        <h3 className="font-heading font-bold text-lg md:text-xl text-white mb-2">
+        <h3 className="font-heading font-bold text-lg md:text-xl text-primary mb-2">
           {course.title}
         </h3>
-        <p className="text-grey-400 text-sm leading-relaxed mb-5 flex-1">
+        <p className="text-text-secondary text-sm leading-relaxed mb-5 flex-1">
           {course.description}
         </p>
         <div className="space-y-2 mb-6">
           {course.features.map((f) => (
-            <div key={f} className="flex items-start gap-2.5 text-xs text-grey-400">
-              <CheckCircle className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${isSold ? "text-zinc-600" : "text-cyan"}`} />
+            <div key={f} className="flex items-start gap-2.5 text-xs text-text-secondary">
+              <CheckCircle className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${isSold ? "text-zinc-600" : "text-accent"}`} />
               {f}
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-between pt-5 border-t border-white/10">
+        <div className="flex items-center justify-between pt-5 border-t border-border">
           <div>
-            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">Course Fee</span>
-            <p className="font-heading font-bold text-2xl text-white">{course.price}</p>
+            <span className="text-[10px] text-text-muted uppercase tracking-wider font-medium">Course Fee</span>
+            <p className="font-heading font-bold text-2xl text-primary">{course.price}</p>
           </div>
           <button
             disabled={isSold}
             className={`px-5 py-2.5 rounded-lg font-semibold text-xs transition-all flex items-center gap-2 ${
               isSold
                 ? "bg-zinc-800/50 text-zinc-500 cursor-not-allowed border border-zinc-800"
-                : "bg-gradient-to-r from-cyan to-blue-500 text-white hover:from-cyan-dark hover:to-blue-600 shadow-xl shadow-cyan/20 hover:shadow-cyan/30"
+                : "bg-gradient-to-r from-accent to-blue-500 text-white hover:from-accent-hover hover:to-blue-600 shadow-xl shadow-accent/20 hover:shadow-accent/30"
             }`}
           >
             {isSold ? "Sold Out" : "Enroll Now"}
@@ -313,15 +313,15 @@ function WhyJoin() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-[#0a0f1a]">
+    <section ref={ref} className="section-padding bg-bg-secondary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Courses</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-accent text-xs font-medium tracking-wider uppercase">Courses</span>
           </div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Why Join DeltaSim?</h2>
-          <p className="text-grey-400 text-lg max-w-2xl mx-auto">Work on real CAE projects that push the boundaries of simulation technology</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Why Join DeltaSim?</h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">Work on real CAE projects that push the boundaries of simulation technology</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">
           {[
@@ -336,13 +336,13 @@ function WhyJoin() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-white/[0.03] border border-white/10 text-center group hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
+                className="p-6 rounded-xl bg-white border border-border text-center group hover:border-accent/30 hover:shadow-lg hover:shadow-accent/10 transition-all duration-500"
               >
-                <div className="w-14 h-14 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan/20 transition-colors">
-                  <Icon className="w-7 h-7 text-cyan" />
+                <div className="w-14 h-14 rounded-full bg-accent-light flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                  <Icon className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="font-heading font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-grey-400 text-sm">{item.desc}</p>
+                <h3 className="font-heading font-bold text-primary mb-2">{item.title}</h3>
+                <p className="text-text-secondary text-sm">{item.desc}</p>
               </motion.div>
             );
           })}
@@ -357,11 +357,11 @@ function OpenRoles() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-[#050B18]">
+    <section ref={ref} className="section-padding bg-bg-tertiary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Open Roles</h2>
-          <p className="text-grey-400 text-lg">Current opportunities at DeltaSim</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Open Roles</h2>
+          <p className="text-text-secondary text-lg">Current opportunities at DeltaSim</p>
         </motion.div>
         <div className="max-w-3xl mx-auto space-y-4">
           {roles.map((role, i) => (
@@ -370,13 +370,13 @@ function OpenRoles() {
               initial={{ opacity: 0, x: -10 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.3, delay: i * 0.08 }}
-              className="flex items-center justify-between p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan/30 hover:bg-white/[0.06] transition-all duration-500"
+              className="flex items-center justify-between p-5 rounded-xl bg-white border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/10 transition-all duration-500"
             >
               <div>
-                <h3 className="font-heading font-bold text-white">{role}</h3>
-                <p className="text-grey-400 text-sm">Full-time | Remote/Hybrid</p>
+                <h3 className="font-heading font-bold text-primary">{role}</h3>
+                <p className="text-text-secondary text-sm">Full-time | Remote/Hybrid</p>
               </div>
-              <span className="px-4 py-2 bg-gradient-to-r from-cyan to-blue-500 text-white font-semibold text-sm rounded-lg hover:from-cyan-dark hover:to-blue-600 transition-all cursor-pointer shadow-xl shadow-cyan/20">
+              <span className="px-4 py-2 bg-gradient-to-r from-accent to-blue-500 text-white font-semibold text-sm rounded-lg hover:from-accent-hover hover:to-blue-600 transition-all cursor-pointer shadow-xl shadow-accent/20">
                 Apply Now
               </span>
             </motion.div>
@@ -407,67 +407,67 @@ function ApplySection() {
 
   if (submitted) {
     return (
-      <section className="section-padding bg-[#0a0f1a]">
+      <section className="section-padding bg-bg-secondary">
         <div className="container-main max-w-lg mx-auto text-center py-20">
-          <div className="w-16 h-16 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-6">
-            <Send className="w-8 h-8 text-cyan" />
+          <div className="w-16 h-16 rounded-full bg-accent-light flex items-center justify-center mx-auto mb-6">
+            <Send className="w-8 h-8 text-accent" />
           </div>
-          <h2 className="font-heading font-bold text-3xl text-white mb-4">Application Received!</h2>
-          <p className="text-grey-400 text-lg">We&apos;ll review your application and reach out soon.</p>
+          <h2 className="font-heading font-bold text-3xl text-primary mb-4">Application Received!</h2>
+          <p className="text-text-secondary text-lg">We&apos;ll review your application and reach out soon.</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="section-padding bg-[#0a0f1a]">
+    <section className="section-padding bg-bg-secondary">
       <div className="container-main max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4">
-            <Send className="w-3.5 h-3.5 text-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Apply</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4">
+            <Send className="w-3.5 h-3.5 text-accent" />
+            <span className="text-accent text-xs font-medium tracking-wider uppercase">Apply</span>
           </div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Apply Now</h2>
-          <p className="text-grey-400 text-lg">Send us your application</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Apply Now</h2>
+          <p className="text-text-secondary text-lg">Send us your application</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium text-grey-300 mb-1.5">Full Name</label>
-              <input type="text" value={formData.name} onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="John Smith" />
+              <label className="block text-sm font-medium text-text-primary mb-1.5">Full Name</label>
+              <input type="text" value={formData.name} onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors placeholder:text-text-muted" placeholder="John Smith" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-grey-300 mb-1.5">Email</label>
-              <input type="email" value={formData.email} onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="john@company.com" />
+              <label className="block text-sm font-medium text-text-primary mb-1.5">Email</label>
+              <input type="email" value={formData.email} onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))} required className="w-full px-4 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors placeholder:text-text-muted" placeholder="john@company.com" />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-grey-300 mb-1.5">Role</label>
+            <label className="block text-sm font-medium text-text-primary mb-1.5">Role</label>
             <select
               value={selectedRole}
               onChange={(e) => setSelectedRole(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors"
             >
-              <option value="" className="bg-[#0a0f1a]">Select a role</option>
+              <option value="">Select a role</option>
               {roles.map((r) => (
-                <option key={r} value={r} className="bg-[#0a0f1a]">{r}</option>
+                <option key={r} value={r}>{r}</option>
               ))}
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-grey-300 mb-1.5">Resume / CV</label>
+            <label className="block text-sm font-medium text-text-primary mb-1.5">Resume / CV</label>
             <div
-              className="border-2 border-dashed border-white/10 rounded-lg p-8 text-center hover:border-cyan transition-colors cursor-pointer"
+              className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-accent transition-colors cursor-pointer"
               onClick={() => fileInputRef.current?.click()}
             >
-              <Upload className="w-8 h-8 text-grey-400 mx-auto mb-2" />
+              <Upload className="w-8 h-8 text-text-muted mx-auto mb-2" />
               {fileName ? (
-                <p className="text-cyan text-sm font-medium">{fileName}</p>
+                <p className="text-accent text-sm font-medium">{fileName}</p>
               ) : (
                 <>
-                  <p className="text-grey-400 text-sm">Click to upload or drag and drop</p>
-                  <p className="text-grey-500 text-xs mt-1">PDF, DOC (max 10MB)</p>
+                  <p className="text-text-secondary text-sm">Click to upload or drag and drop</p>
+                  <p className="text-text-muted text-xs mt-1">PDF, DOC (max 10MB)</p>
                 </>
               )}
               <input
@@ -480,12 +480,12 @@ function ApplySection() {
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-grey-300 mb-1.5">Cover Letter (Optional)</label>
-            <textarea rows={4} value={formData.coverLetter} onChange={(e) => setFormData((p) => ({ ...p, coverLetter: e.target.value }))} className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors resize-none placeholder:text-grey-500" placeholder="Tell us why you'd be a great fit..." />
+            <label className="block text-sm font-medium text-text-primary mb-1.5">Cover Letter (Optional)</label>
+            <textarea rows={4} value={formData.coverLetter} onChange={(e) => setFormData((p) => ({ ...p, coverLetter: e.target.value }))} className="w-full px-4 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors resize-none placeholder:text-text-muted" placeholder="Tell us why you'd be a great fit..." />
           </div>
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-dark hover:to-blue-600 transition-all shadow-xl shadow-cyan/20"
+            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-blue-500 text-white font-semibold rounded-lg hover:from-accent-hover hover:to-blue-600 transition-all shadow-xl shadow-accent/20"
           >
             Submit Application <Send className="w-4 h-4" />
           </button>

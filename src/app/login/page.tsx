@@ -36,33 +36,33 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 md:pt-28 overflow-hidden bg-[#0a0f1a]">
+    <section className="relative min-h-screen flex items-center pt-24 md:pt-28 overflow-hidden bg-bg-secondary">
       <div className="container-main w-full">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-cyan" />
-              <span className="text-cyan text-xs font-medium tracking-wider uppercase">Welcome Back</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              <span className="text-accent text-xs font-medium tracking-wider uppercase">Welcome Back</span>
             </div>
-            <h1 className="font-heading font-bold text-3xl md:text-4xl text-white mb-2">Sign In</h1>
-            <p className="text-grey-400 text-sm">Access your DeltaSim account</p>
+            <h1 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-2">Sign In</h1>
+            <p className="text-text-secondary text-sm">Access your DeltaSim account</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5 bg-white/[0.03] border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+          <form onSubmit={handleSubmit} className="space-y-5 bg-white border border-border rounded-2xl p-8 shadow-xl">
             <div>
-              <label className="block text-sm font-medium text-grey-300 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-text-primary mb-1.5">Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-grey-500" />
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full pl-10 pr-4 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="john@company.com" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors placeholder:text-text-muted" placeholder="john@company.com" />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-grey-300 mb-1.5">Password</label>
+              <label className="block text-sm font-medium text-text-primary mb-1.5">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-grey-500" />
-                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full pl-10 pr-10 py-3 rounded-lg border border-white/10 bg-white/[0.03] text-white focus:outline-none focus:border-cyan transition-colors placeholder:text-grey-500" placeholder="Enter your password" />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-grey-500 hover:text-grey-300">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
+                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full pl-10 pr-10 py-3 rounded-lg border border-border bg-white text-primary focus:outline-none focus:border-accent transition-colors placeholder:text-text-muted" placeholder="Enter your password" />
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary">
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
@@ -70,19 +70,19 @@ export default function LoginPage() {
 
             {message && (
               <div className={`px-4 py-3 rounded-lg text-sm ${
-                message.type === "success" ? "bg-cyan/10 text-cyan border border-cyan/20" : "bg-red/10 text-red-400 border border-red/20"
+                message.type === "success" ? "bg-accent-light text-accent border border-accent/20" : "bg-red/10 text-red-400 border border-red/20"
               }`}>
                 {message.text}
               </div>
             )}
 
-            <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-dark hover:to-blue-600 transition-all shadow-xl shadow-cyan/20 disabled:opacity-50">
+            <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-accent to-blue-500 text-white font-semibold rounded-lg hover:from-accent-hover hover:to-blue-600 transition-all shadow-xl shadow-accent/20 disabled:opacity-50">
               {loading ? "Signing in..." : "Sign In"} <LogIn className="w-4 h-4" />
             </button>
 
-            <p className="text-center text-grey-400 text-sm">
+            <p className="text-center text-text-secondary text-sm">
               Don&apos;t have an account?{" "}
-              <Link href="/signup" className="text-cyan hover:underline">Create one</Link>
+              <Link href="/signup" className="text-accent hover:underline">Create one</Link>
             </p>
           </form>
         </motion.div>

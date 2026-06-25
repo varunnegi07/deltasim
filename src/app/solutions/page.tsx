@@ -173,21 +173,21 @@ function HeroSection() {
           alt="Engineering solutions"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/80 to-[#050B18]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent" />
       </div>
       <div className="container-main relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Solution Offerings</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4 md:mb-6 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-accent text-xs font-medium tracking-wider uppercase">Solution Offerings</span>
           </div>
-          <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-primary leading-tight mb-4 md:mb-6 max-w-4xl">
             Comprehensive Engineering{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Solutions</span>
+            <span className="text-gradient">Solutions</span>
           </h1>
-          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+          <p className="text-text-secondary text-base md:text-xl max-w-3xl leading-relaxed">
             End-to-end engineering services from concept design through
             high-fidelity simulation and optimization — delivered with precision
             and technical rigor.
@@ -204,7 +204,7 @@ function SolutionsList() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main space-y-20">
         {solutions.map((sol, i) => {
           const Icon = sol.icon;
@@ -218,22 +218,22 @@ function SolutionsList() {
               className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 lg:gap-16 items-start`}
             >
               <div className="flex-1">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center mb-5">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-blue-500 flex items-center justify-center mb-5">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h2 className="font-heading font-bold text-2xl md:text-3xl text-navy mb-4">{sol.title}</h2>
-                <p className="text-grey-500 leading-relaxed mb-6">{sol.desc}</p>
+                <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">{sol.title}</h2>
+                <p className="text-text-secondary leading-relaxed mb-6">{sol.desc}</p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {sol.features.map((f) => (
-                    <div key={f} className="flex items-start gap-2 text-sm text-grey-600">
-                      <CheckCircle className="w-4 h-4 text-cyan mt-0.5 flex-shrink-0" />
+                    <div key={f} className="flex items-start gap-2 text-sm text-text-secondary">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                       {f}
                     </div>
                   ))}
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-grey-200 shadow-md">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-md">
                   <img
                     src={sol.image}
                     alt={sol.title}
@@ -254,11 +254,11 @@ function SolutionsCTA() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section ref={ref} className="section-padding gradient-navy text-center">
+    <section ref={ref} className="section-padding gradient-accent-light text-center">
       <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="container-main">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Ready to Start Your Project?</h2>
-        <p className="text-grey-300 text-lg mb-8 max-w-2xl mx-auto">Get a tailored engineering solution for your specific requirements</p>
-        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-cyan text-navy font-semibold rounded-lg hover:bg-cyan-dark transition-colors">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Ready to Start Your Project?</h2>
+        <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">Get a tailored engineering solution for your specific requirements</p>
+        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25">
           Request Engineering Consultation <ArrowRight className="w-4 h-4" />
         </Link>
       </motion.div>

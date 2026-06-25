@@ -45,9 +45,9 @@ export default function WhyDeltaSim() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding gradient-navy relative overflow-hidden">
+    <section ref={ref} className="section-padding gradient-accent-light relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]">
-        <div className="w-64 h-64 bg-cyan rounded-full blur-[100px] absolute top-1/4 right-1/4" />
+        <div className="w-64 h-64 bg-accent rounded-full blur-[100px] absolute top-1/4 right-1/4" />
       </div>
       <div className="container-main relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -56,10 +56,10 @@ export default function WhyDeltaSim() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-6">
-              Why <span className="text-cyan">DeltaSim</span>?
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-6">
+              Why <span className="text-accent">DeltaSim</span>?
             </h2>
-            <p className="text-grey-300 text-lg leading-relaxed mb-8">
+            <p className="text-text-secondary text-lg leading-relaxed mb-8">
               We combine deep engineering expertise with a commitment to
               precision, speed, and confidentiality — delivering results that
               exceed expectations.
@@ -75,8 +75,8 @@ export default function WhyDeltaSim() {
                     transition={{ duration: 0.4, delay: i * 0.08 }}
                     className="flex items-start gap-3"
                   >
-                    <Icon className="w-5 h-5 text-cyan mt-0.5 flex-shrink-0" />
-                    <span className="text-grey-200">{reason.text}</span>
+                    <Icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span className="text-text-primary">{reason.text}</span>
                   </motion.li>
                 );
               })}
@@ -89,14 +89,14 @@ export default function WhyDeltaSim() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="p-5 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="flex items-center gap-4 mb-6">
-                <CheckCircle className="w-8 h-8 text-cyan" />
+            <div className="p-5 md:p-8 rounded-2xl bg-white border border-border shadow-xl shadow-accent/5">
+                <div className="flex items-center gap-4 mb-6">
+                <CheckCircle className="w-8 h-8 text-accent" />
                 <div>
-                  <div className="font-heading font-bold text-white text-lg">
+                  <div className="font-heading font-bold text-primary text-lg">
                     98% Client Satisfaction
                   </div>
-                  <div className="text-grey-400 text-sm">
+                  <div className="text-text-muted text-sm">
                     Based on post-project surveys
                   </div>
                 </div>
@@ -109,14 +109,14 @@ export default function WhyDeltaSim() {
                 ].map((stat) => (
                   <div key={stat.label}>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-grey-300">{stat.label}</span>
-                      <span className="text-cyan font-semibold">
+                      <span className="text-text-secondary">{stat.label}</span>
+                      <span className="text-accent font-semibold">
                         {stat.value}%
                       </span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div className="h-2 rounded-full bg-bg-tertiary overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-cyan to-blue-400 rounded-full"
+                        className="h-full bg-gradient-to-r from-accent to-blue-500 rounded-full"
                         style={{ width: `${stat.value}%` }}
                       />
                     </div>

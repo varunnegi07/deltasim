@@ -1,22 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #0B1F3B;
-  --color-navy-light: #132d5a;
-  --color-deep-grey: #111827;
-  --color-light-grey: #F3F4F6;
-  --color-cyan: #38BDF8;
-  --color-cyan-dark: #0284C7;
-  --color-grey-50: #F9FAFB;
-  --color-grey-100: #F3F4F6;
-  --color-grey-200: #E5E7EB;
-  --color-grey-300: #D1D5DB;
-  --color-grey-400: #9CA3AF;
-  --color-grey-500: #6B7280;
-  --color-grey-600: #4B5563;
-  --color-grey-700: #374151;
-  --color-grey-800: #1F2937;
-  --color-grey-900: #111827;
+  --color-primary: #1E2A3A;
+  --color-primary-light: #2D3E50;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-light: #DBEAFE;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8FAFC;
+  --color-bg-tertiary: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
   --animate-fade-in: fade-in 0.6s ease-out forwards;
@@ -45,12 +42,12 @@ html {
 
 body {
   background: #FFFFFF;
-  color: #111827;
+  color: #1F2937;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
-  background: #38BDF8;
+  background: #2563EB;
   color: #FFFFFF;
 }
 
@@ -80,18 +77,22 @@ body {
   }
 }
 
-@utility gradient-navy {
-  background: linear-gradient(135deg, #0B1F3B 0%, #111827 100%);
+@utility gradient-primary {
+  background: linear-gradient(135deg, #1E2A3A 0%, #2D3E50 100%);
 }
 
-@utility gradient-cyan {
-  background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+@utility gradient-accent {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+}
+
+@utility gradient-accent-light {
+  background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .hover-lift {
@@ -100,11 +101,11 @@ body {
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(30, 42, 58, 0.1);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #38BDF8, #0284C7);
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

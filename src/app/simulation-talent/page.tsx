@@ -33,18 +33,18 @@ export default function SimulationTalentPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[45vh] md:min-h-[55vh] flex items-center gradient-navy pt-20 md:pt-24">
+    <section className="min-h-[45vh] md:min-h-[55vh] flex items-center gradient-accent-light pt-20 md:pt-24">
       <div className="container-main">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
-              <span className="w-2 h-2 rounded-full bg-cyan" />
-              <span className="text-cyan text-xs font-medium tracking-wider uppercase">Simulation Talent</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4 md:mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <span className="text-accent text-xs font-medium tracking-wider uppercase">Simulation Talent</span>
             </div>
-            <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
-              Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Simulation Engineers</span> for High-Fidelity Analysis
+            <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-primary leading-tight mb-4 md:mb-6 max-w-4xl">
+              Specialized <span className="text-gradient">Simulation Engineers</span> for High-Fidelity Analysis
             </h1>
-            <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+            <p className="text-text-secondary text-base md:text-xl max-w-3xl leading-relaxed">
               Access deep-domain simulation expertise across FEA, CFD, thermal, and
               multibody dynamics — delivered by engineers who have solved the
               toughest problems in aerospace, automotive, and energy.
@@ -82,11 +82,11 @@ function ExpertiseAreas() {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Core Expertise Areas</h2>
-          <p className="text-grey-500 text-lg max-w-2xl mx-auto">Deep technical specialization across all major simulation domains</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Core Expertise Areas</h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">Deep technical specialization across all major simulation domains</p>
         </motion.div>
         <div className="space-y-4">
           {areas.map((area, i) => {
@@ -97,14 +97,14 @@ function ExpertiseAreas() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex gap-5 p-6 rounded-xl bg-grey-50 border border-grey-200 hover-lift"
+                className="flex gap-5 p-6 rounded-xl bg-bg-secondary border border-border hover-lift"
               >
-                <div className="w-12 h-12 rounded-lg bg-cyan/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-cyan" />
+                <div className="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-navy text-lg mb-1">{area.title}</h3>
-                  <p className="text-grey-500 text-sm leading-relaxed">{area.desc}</p>
+                  <h3 className="font-heading font-bold text-primary text-lg mb-1">{area.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{area.desc}</p>
                 </div>
               </motion.div>
             );
@@ -122,11 +122,11 @@ function ToolExpertise() {
   const tools = ["ANSYS", "Abaqus", "SolidWorks", "CATIA", "MATLAB", "LS-DYNA"];
 
   return (
-    <section ref={ref} className="section-padding bg-grey-50">
+    <section ref={ref} className="section-padding bg-bg-secondary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Tool Expertise</h2>
-          <p className="text-grey-500 text-lg">Industry-leading software proficiency</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Tool Expertise</h2>
+          <p className="text-text-secondary text-lg">Industry-leading software proficiency</p>
         </motion.div>
         <div className="flex flex-wrap justify-center gap-3">
           {tools.map((tool, i) => (
@@ -135,7 +135,7 @@ function ToolExpertise() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: i * 0.08 }}
-              className="px-6 py-3 rounded-lg bg-white border border-grey-200 text-navy font-semibold text-sm hover-lift"
+              className="px-6 py-3 rounded-lg bg-white border border-border text-primary font-semibold text-sm hover-lift"
             >
               {tool}
             </motion.div>
@@ -157,10 +157,10 @@ function DeliveryModel() {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Delivery Models</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Delivery Models</h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">
           {models.map((m, i) => {
@@ -171,13 +171,13 @@ function DeliveryModel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-grey-50 border border-grey-200 text-center hover-lift"
+                className="p-6 rounded-xl bg-bg-secondary border border-border text-center hover-lift"
               >
-                <div className="w-14 h-14 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-7 h-7 text-cyan" />
+                <div className="w-14 h-14 rounded-full bg-accent-light flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="font-heading font-bold text-navy mb-2">{m.title}</h3>
-                <p className="text-grey-500 text-sm">{m.desc}</p>
+                <h3 className="font-heading font-bold text-primary mb-2">{m.title}</h3>
+                <p className="text-text-secondary text-sm">{m.desc}</p>
               </motion.div>
             );
           })}
@@ -198,10 +198,10 @@ function ValueProposition() {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-grey-50">
+    <section ref={ref} className="section-padding bg-bg-secondary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Value Proposition</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Value Proposition</h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {values.map((v, i) => {
@@ -212,10 +212,10 @@ function ValueProposition() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-center gap-4 p-5 rounded-xl bg-white border border-grey-200"
+                className="flex items-center gap-4 p-5 rounded-xl bg-white border border-border"
               >
-                <Icon className="w-6 h-6 text-cyan flex-shrink-0" />
-                <span className="text-navy font-medium">{v.text}</span>
+                <Icon className="w-6 h-6 text-accent flex-shrink-0" />
+                <span className="text-primary font-medium">{v.text}</span>
               </motion.div>
             );
           })}
@@ -229,11 +229,11 @@ function SimTalentCTA() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section ref={ref} className="section-padding gradient-navy text-center">
+    <section ref={ref} className="section-padding gradient-accent-light text-center">
       <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="container-main">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Need Simulation Talent?</h2>
-        <p className="text-grey-300 text-lg mb-8">Let us match you with the right simulation expert</p>
-        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-cyan text-navy font-semibold rounded-lg hover:bg-cyan-dark transition-colors">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Need Simulation Talent?</h2>
+        <p className="text-text-secondary text-lg mb-8">Let us match you with the right simulation expert</p>
+        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25">
           Get Started <ArrowRight className="w-4 h-4" />
         </Link>
       </motion.div>

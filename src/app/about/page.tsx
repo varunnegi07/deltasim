@@ -42,17 +42,17 @@ export default function AboutPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
+    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-accent-light pt-20 md:pt-24">
       <div className="container-main">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">About Us</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4 md:mb-6">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-accent text-xs font-medium tracking-wider uppercase">About Us</span>
           </div>
-          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-primary leading-tight mb-4 md:mb-6 max-w-4xl">
             Engineering Excellence, Delivered
           </h1>
-          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+          <p className="text-text-secondary text-base md:text-xl max-w-3xl leading-relaxed">
             DeltaSim is a premium engineering simulation and talent solutions
             company delivering high-performance engineering outcomes across
             global industries.
@@ -68,7 +68,7 @@ function MissionSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
@@ -76,15 +76,15 @@ function MissionSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-6">Company Overview</h2>
-            <p className="text-grey-500 leading-relaxed mb-6">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-6">Company Overview</h2>
+            <p className="text-text-secondary leading-relaxed mb-6">
               DeltaSim combines deep CAE simulation expertise with a global
               talent network to deliver end-to-end engineering solutions. We
               partner with organizations across aerospace, automotive, energy,
               and medical device industries to accelerate product development
               and optimize engineering performance.
             </p>
-            <p className="text-grey-500 leading-relaxed">
+            <p className="text-text-secondary leading-relaxed">
               Our software-agnostic approach ensures we deploy the best tools
               for every problem — from ANSYS and Abaqus to OpenFOAM and
               custom MATLAB/Python scripts — giving our clients the technical
@@ -95,15 +95,15 @@ function MissionSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-8 rounded-2xl bg-grey-50 border border-grey-200"
+            className="p-8 rounded-2xl bg-bg-secondary border border-border"
           >
             <img
               src="/images/about-rocket.jpg"
               alt="Rocket launch"
               className="w-full rounded-xl mb-6"
             />
-            <h3 className="font-heading font-bold text-2xl text-navy mb-4">Our Mission</h3>
-            <p className="text-grey-600 text-lg leading-relaxed italic">
+            <h3 className="font-heading font-bold text-2xl text-primary mb-4">Our Mission</h3>
+            <p className="text-text-secondary text-lg leading-relaxed italic">
               &ldquo;Empower organizations with world-class simulation and
               engineering talent to solve the most complex engineering
               challenges — faster, smarter, and with absolute precision.&rdquo;
@@ -120,11 +120,11 @@ function ValuesSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-grey-50">
+    <section ref={ref} className="section-padding bg-bg-secondary">
       <div className="container-main">
         <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">Core Values</h2>
-          <p className="text-grey-500 text-lg">The principles that guide every engagement</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Core Values</h2>
+          <p className="text-text-secondary text-lg">The principles that guide every engagement</p>
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {values.map((v, i) => {
@@ -135,13 +135,13 @@ function ValuesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="p-6 rounded-xl bg-white border border-grey-200 text-center hover-lift"
+                className="p-6 rounded-xl bg-white border border-border text-center hover-lift"
               >
-                <div className="w-12 h-12 rounded-full bg-cyan/10 flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-6 h-6 text-cyan" />
+                <div className="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-heading font-bold text-navy mb-2">{v.title}</h3>
-                <p className="text-grey-500 text-sm">{v.desc}</p>
+                <h3 className="font-heading font-bold text-primary mb-2">{v.title}</h3>
+                <p className="text-text-secondary text-sm">{v.desc}</p>
               </motion.div>
             );
           })}
@@ -156,7 +156,7 @@ function StatsSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
@@ -167,10 +167,10 @@ function StatsSection() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-cyan mb-1">
+              <div className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-accent mb-1">
                 {stat.value}
               </div>
-              <div className="text-grey-500 text-sm">{stat.label}</div>
+              <div className="text-text-secondary text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -183,11 +183,11 @@ function AboutCTA() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section ref={ref} className="section-padding gradient-navy text-center">
+    <section ref={ref} className="section-padding gradient-accent-light text-center">
       <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="container-main">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Ready to Partner with DeltaSim?</h2>
-        <p className="text-grey-300 text-lg mb-8 max-w-2xl mx-auto">Let&apos;s discuss how we can help accelerate your engineering projects</p>
-        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-cyan text-navy font-semibold rounded-lg hover:bg-cyan-dark transition-colors">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Ready to Partner with DeltaSim?</h2>
+        <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">Let&apos;s discuss how we can help accelerate your engineering projects</p>
+        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25">
           Get in Touch <ArrowRight className="w-4 h-4" />
         </Link>
       </motion.div>

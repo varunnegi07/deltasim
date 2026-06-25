@@ -32,14 +32,14 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-white/5">
+    <footer className="bg-bg-secondary border-t border-border">
       <div className="container-main section-padding">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 order-first">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <img src="/images/logo.png" alt="DeltaSim" className="h-16 w-auto" />
             </Link>
-            <p className="text-grey-400 text-sm leading-relaxed mb-6">
+            <p className="text-text-muted text-sm leading-relaxed mb-6">
               Advanced engineering simulation and talent solutions for
               high-performance engineering outcomes across global industries.
             </p>
@@ -54,7 +54,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-grey-400 text-xs hover:bg-cyan hover:text-navy transition-colors"
+                  className="w-9 h-9 rounded-lg bg-border flex items-center justify-center text-text-muted text-xs hover:bg-accent hover:text-white transition-colors"
                 >
                   {social.name[0]}
                 </a>
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-heading font-semibold text-white text-sm mb-4">
+              <h4 className="font-heading font-semibold text-primary text-sm mb-4">
                 {category}
               </h4>
               <ul className="space-y-2.5">
@@ -72,7 +72,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-grey-400 text-sm hover:text-cyan transition-colors"
+                      className="text-text-muted text-sm hover:text-accent transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -83,12 +83,12 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-grey-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-text-muted text-sm">
             &copy; {new Date().getFullYear()} DeltaSim Engineering. All rights
             reserved.
           </p>
-          <p className="text-grey-500 text-sm">
+          <p className="text-text-muted text-sm">
             Precision at the Core of Every Design
           </p>
         </div>

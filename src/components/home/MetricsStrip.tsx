@@ -16,7 +16,7 @@ export default function MetricsStrip() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="bg-navy-light border-y border-white/5">
+    <section ref={ref} className="bg-primary border-y border-border/50">
       <div className="container-main py-10 md:py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {metrics.map((metric, i) => (
@@ -27,10 +27,10 @@ export default function MetricsStrip() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cyan mb-1">
+              <div className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-accent mb-1">
                 {metric.value}
               </div>
-              <div className="text-grey-400 text-sm">{metric.label}</div>
+              <div className="text-text-muted text-sm">{metric.label}</div>
             </motion.div>
           ))}
         </div>

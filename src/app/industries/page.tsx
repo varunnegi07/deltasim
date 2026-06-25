@@ -87,18 +87,18 @@ export default function IndustriesPage() {
 
 function HeroSection() {
   return (
-    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-navy pt-20 md:pt-24">
+    <section className="min-h-[40vh] md:min-h-[50vh] flex items-center gradient-accent-light pt-20 md:pt-24">
       <div className="container-main">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-4 md:mb-6">
-            <span className="w-2 h-2 rounded-full bg-cyan" />
-            <span className="text-cyan text-xs font-medium tracking-wider uppercase">Industries</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 mb-4 md:mb-6">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-accent text-xs font-medium tracking-wider uppercase">Industries</span>
           </div>
-          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6 max-w-4xl">
+          <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-primary leading-tight mb-4 md:mb-6 max-w-4xl">
             Engineering Solutions Across{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-blue-400">Critical Industries</span>
+            <span className="text-gradient">Critical Industries</span>
           </h1>
-          <p className="text-grey-300 text-base md:text-xl max-w-3xl leading-relaxed">
+          <p className="text-text-secondary text-base md:text-xl max-w-3xl leading-relaxed">
             Deep-domain engineering expertise spanning seven high-stakes
             industries — delivering precision simulation and design solutions
             where reliability matters most.
@@ -114,7 +114,7 @@ function IndustriesGrid() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main space-y-16">
         {industries.map((ind, i) => {
           const Icon = ind.icon;
@@ -127,13 +127,13 @@ function IndustriesGrid() {
               className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 lg:gap-16 items-center`}
             >
               <div className="flex-1">
-                <Icon className="w-10 h-10 text-cyan mb-4" />
-                <h2 className="font-heading font-bold text-2xl md:text-3xl text-navy mb-4">{ind.name}</h2>
-                <p className="text-grey-500 leading-relaxed mb-6">{ind.desc}</p>
+                <Icon className="w-10 h-10 text-accent mb-4" />
+                <h2 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">{ind.name}</h2>
+                <p className="text-text-secondary leading-relaxed mb-6">{ind.desc}</p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {ind.applications.map((app) => (
-                    <div key={app} className="flex items-center gap-2 text-sm text-grey-600">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan flex-shrink-0" />
+                    <div key={app} className="flex items-center gap-2 text-sm text-text-secondary">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                       {app}
                     </div>
                   ))}
@@ -143,7 +143,7 @@ function IndustriesGrid() {
                 <img
                   src={ind.image}
                   alt={ind.name}
-                  className="w-full aspect-[4/3] rounded-2xl object-cover border border-grey-200"
+                  className="w-full aspect-[4/3] rounded-2xl object-cover border border-border"
                   loading="lazy"
                 />
               </div>
@@ -159,11 +159,11 @@ function IndustryCTA() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section ref={ref} className="section-padding gradient-navy text-center">
+    <section ref={ref} className="section-padding gradient-accent-light text-center">
       <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.5 }} className="container-main">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">Not Sure Where to Start?</h2>
-        <p className="text-grey-300 text-lg mb-8 max-w-2xl mx-auto">Our engineering team will assess your requirements and recommend the right simulation approach</p>
-        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-cyan text-navy font-semibold rounded-lg hover:bg-cyan-dark transition-colors">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">Not Sure Where to Start?</h2>
+        <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">Our engineering team will assess your requirements and recommend the right simulation approach</p>
+        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25">
           Talk to an Engineer <ArrowRight className="w-4 h-4" />
         </Link>
       </motion.div>

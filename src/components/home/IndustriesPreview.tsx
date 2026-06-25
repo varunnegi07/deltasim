@@ -65,7 +65,7 @@ export default function IndustriesPreview() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,10 +73,10 @@ export default function IndustriesPreview() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             Industries We Serve
           </h2>
-          <p className="text-grey-500 text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
             Deep-domain engineering expertise across seven high-stakes industries
           </p>
         </motion.div>
@@ -91,18 +91,18 @@ export default function IndustriesPreview() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <div className="group p-6 rounded-xl bg-grey-50 border border-grey-200 hover-lift">
+                <div className="group p-6 rounded-xl bg-bg-secondary border border-border hover-lift">
                   <img
                     src={industry.image}
                     alt={industry.name}
                     className="w-full h-24 object-contain mb-3 rounded-lg"
                     loading="lazy"
                   />
-                  <Icon className="w-8 h-8 text-cyan mb-3" />
-                  <h3 className="font-heading font-bold text-navy mb-2">
+                  <Icon className="w-8 h-8 text-accent mb-3" />
+                  <h3 className="font-heading font-bold text-primary mb-2">
                     {industry.name}
                   </h3>
-                  <p className="text-grey-500 text-sm">
+                  <p className="text-text-secondary text-sm">
                     {industry.problem}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export default function IndustriesPreview() {
         >
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 text-cyan font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
           >
             View All Industries
             <ArrowRight className="w-4 h-4" />

@@ -23,7 +23,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
       <nav className="container-main flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-2">
           <img src="/images/logo.png" alt="DeltaSim" className="h-16 w-auto" />
@@ -36,8 +36,8 @@ export default function Header() {
               href={link.href}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "text-cyan bg-white/10"
-                  : "text-grey-300 hover:text-white hover:bg-white/5"
+                  ? "text-accent bg-accent-light"
+                  : "text-text-secondary hover:text-primary hover:bg-bg-tertiary"
               }`}
             >
               {link.label}
@@ -47,7 +47,7 @@ export default function Header() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
+          className="lg:hidden p-2 text-primary min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,7 +61,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-navy border-t border-white/10"
+            className="lg:hidden bg-white border-t border-border"
           >
             <div className="container-main py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -71,8 +71,8 @@ export default function Header() {
                   onClick={() => setMobileOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors min-h-[44px] flex items-center ${
                     pathname === link.href
-                      ? "text-cyan bg-white/10"
-                      : "text-grey-300 hover:text-white hover:bg-white/5"
+                      ? "text-accent bg-accent-light"
+                      : "text-text-secondary hover:text-primary hover:bg-bg-tertiary"
                   }`}
                 >
                   {link.label}

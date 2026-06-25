@@ -11,7 +11,7 @@ export default function DualOffering() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-bg-primary">
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,10 +19,10 @@ export default function DualOffering() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             What We Offer
           </h2>
-          <p className="text-grey-500 text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
             Two core capabilities under one roof — engineering solutions and
             expert talent deployment
           </p>
@@ -69,10 +69,10 @@ export default function DualOffering() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
               >
-                <div className="group relative h-full p-6 md:p-8 lg:p-10 rounded-2xl bg-white border border-grey-200 hover-lift overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="group relative h-full p-6 md:p-8 lg:p-10 rounded-2xl bg-white border border-border hover-lift overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent-light to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-blue-500 flex items-center justify-center mb-4">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <img
@@ -81,23 +81,23 @@ export default function DualOffering() {
                       className="w-full h-40 md:h-48 object-cover mb-4 rounded-xl"
                       loading="lazy"
                     />
-                    <h3 className="font-heading font-bold text-2xl text-navy mb-3">
+                    <h3 className="font-heading font-bold text-2xl text-primary mb-3">
                       {offering.title}
                     </h3>
-                    <p className="text-grey-500 mb-6 leading-relaxed">
+                    <p className="text-text-secondary mb-6 leading-relaxed">
                       {offering.description}
                     </p>
                     <ul className="space-y-3 mb-8">
                       {offering.features.map((f) => (
-                        <li key={f} className="flex items-center gap-3 text-grey-600">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan flex-shrink-0" />
+                        <li key={f} className="flex items-center gap-3 text-text-secondary">
+                          <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                           {f}
                         </li>
                       ))}
                     </ul>
                     <Link
                       href={offering.href}
-                      className="inline-flex items-center gap-2 text-cyan font-semibold hover:gap-3 transition-all"
+                      className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
                     >
                       {offering.cta}
                       <ArrowRight className="w-4 h-4" />
