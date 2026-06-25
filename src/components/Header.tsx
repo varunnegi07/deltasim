@@ -26,7 +26,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
       <nav className="container-main flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-2">
-          <img src="/images/logo.png" alt="DeltaSim" className="h-16 w-auto" />
+          <img src="/images/logo.png" alt="DeltaSim" className="h-20 w-auto" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
