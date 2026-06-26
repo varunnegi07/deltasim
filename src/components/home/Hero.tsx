@@ -26,13 +26,13 @@ export default function Hero() {
                 SIMULATE &bull; INNOVATE &bull; ENGINEER
               </span>
             </div>
-            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-primary leading-[1.1] tracking-tight mb-4">
+            <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-4">
               Precision at the{" "}
               <span className="text-gradient">
                 Core of Every Design
               </span>
             </h1>
-            <p className="text-text-secondary text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
               Mechanical Design &bull; Simulation &bull; Prototyping &bull; Optimization
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +57,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/talent"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border text-primary font-semibold rounded-lg hover:bg-bg-tertiary transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
               >
                 Hire Engineering Talent
                 <svg
